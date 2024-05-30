@@ -21,6 +21,11 @@ const Container = styled.div`
       font-family: "Anonymous Pro", monospace;
       cursor: pointer;
     }
+
+    .header a {
+      text-decoration: none;
+      color: black;
+    }
 `
 
 const Menu = styled.div`
@@ -52,12 +57,12 @@ const Header = () => {
     <Container>
       <div className='header_main'>
       <div className='header'>
-        <h1 href=''>Insilicx inc.</h1>
+        <h1><a href='/'>Insilicx inc.</a></h1>
           <Menu>
             <ul class="menu">
                 <li><a href=''>Каталог</a></li>
                 <li><a href=''>Фото</a></li>
-                <li><a href=''>Отзывы</a></li>
+                <li><a href='/reviews'>Отзывы</a></li>
             </ul>
           </Menu>
       </div>
