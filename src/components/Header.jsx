@@ -9,17 +9,18 @@ const Container = styled.div`
       display: flex;
       justify-content: space-between;
       align-self: center;
-      margin-top: 25px;
-      margin-left: 40px;
-      margin-right: 80px;
+      margin-top: 15px;
+      margin-bottom: 7px;
+      margin-left: 150px;
+      margin-right: 150px;
       height: 50px;
     }
 
     .header h1 {
-    font-size: 32px;
-    font-family: "Anonymous Pro", monospace;
-    cursor: pointer;
-  }
+      font-size: 35px;
+      font-family: "Anonymous Pro", monospace;
+      cursor: pointer;
+    }
 `
 
 const Menu = styled.div`
@@ -28,7 +29,7 @@ const Menu = styled.div`
       font-family: "Noto Sans", sans-serif;
       grid-gap: 30px;
       font-size: 14px;
-      margin-top: 6px;
+      margin-top: 11px;
       justify-content: space-around;
       list-style-type: none;
       text-transform: uppercase;
@@ -37,7 +38,8 @@ const Menu = styled.div`
   .menu a {
       color: black;
       text-decoration: none;
-      font-weight: 400;
+      font-weight: 500;
+      font-size: 15px;
   }
 
   .menu :hover {

@@ -6,7 +6,6 @@ import youtubesvg from '../svg/youtube.svg'
 
 const FooterMain = styled.div`
     font-family: "Anonymous Pro", monospace;
-    margin-top: 40px; 
     height: 230px;
     background-color: #0C0C0C;
     color: white;
