@@ -89,7 +89,7 @@ const Footer = () => {
             </LogoLinks>
             <ShopNav>
                 <p className='caption'>МАГАЗИН</p>
-                <p><a href='#'>Каталог</a></p>
+                <p><a href='/'>Каталог</a></p>
                 <p><a href='#'>И так далее</a></p>
             </ShopNav>
             <InfoNav>

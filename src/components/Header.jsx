@@ -60,7 +60,7 @@ const Header = () => {
         <h1><a href='/'>Insilicx inc.</a></h1>
           <Menu>
             <ul class="menu">
-                <li><a href=''>Каталог</a></li>
+                <li><a href='/'>Каталог</a></li>
                 <li><a href=''>Фото</a></li>
                 <li><a href='/reviews'>Отзывы</a></li>
             </ul>
