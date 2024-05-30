@@ -22,14 +22,6 @@ const Container = styled.div`
   }
 `
 
-const Line = styled.div`
-  hr {
-    margin-left: -10px;
-    margin-right: -10px;
-  }
-
-`
-
 const Menu = styled.div`
   .menu {
       display: flex;
@@ -68,9 +60,7 @@ const Header = () => {
           </Menu>
       </div>
       <div>
-        <Line>
           <hr></hr>
-        </Line>
         </div>
     </div>
     </Container>
