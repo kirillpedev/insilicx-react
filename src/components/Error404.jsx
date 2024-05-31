@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 const Text = styled.div`
    h1 {
+    margin-top: 10%;
     font-family: "Noto Sans", sans-serif;
     font-size: 164px;
     font-weight: bold;
@@ -34,22 +35,30 @@ const Text3 = styled.div`
 const Button = styled.div`
     
     .button-1 {
+        margin-top: 20px;
         justify-content: center;
         display: flex;
-        margin-left: 20px;
-
     }
     button {
+        border-radius: 2px;
         background-color: black;
         color: white;
         width: 323px;
         height: 47px;
+        margin-bottom: 20%;
         font-family: "Noto Sans", sans-serif;
-        font-size: 23px;
+        font-size: 18px;
+        letter-spacing: 2px;
         font-weight: bold;
-        text-align: center;
-        justify-content: center;
-        
+        cursor: pointer;
+    }
+
+    .button-1 :hover {
+        box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
+        background-color: #ffff;
+        font-size: 22px;
+        color: #000;
+        transition: 0.2s ease;
     }
 `
 const Error404 = () => {
@@ -65,7 +74,9 @@ const Error404 = () => {
         <h3>страница, на которую вы пытались <br></br>попасть, не существует или была<br></br>удалена</h3>
       </Text3>
       <Button>
-        <button className='button-1'>Вернуться на главную</button>
+        <div className='button-1'>
+          <button>Вернуться на главную</button>
+        </div>
       </Button>
     </div>
   )
