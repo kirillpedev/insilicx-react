@@ -7,7 +7,10 @@ const Grid = styled.div`
     .grid_cont {
       display: grid;
       grid-template-columns: 455px 455px 1fr;
-      margin-left: 16%;
+      /* margin-left: 16%; */
+      margin-left: auto;
+      margin-right: auto; 
+      width: 82em;
       margin-bottom: 220px;
       margin-top: 50px;
     }
@@ -17,7 +20,7 @@ const Text = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
   .upper_text h1 {
-    margin-top: 80px;
+    margin-top: 3%;
     text-align: center;
     font-family: "Anonymous Pro", monospace;
     font-size: 48px;
@@ -25,6 +28,7 @@ const Text = styled.div`
   }  
 
   .upper_text h2 {
+    margin-top: 10px;
     text-align: center;
     font-family: "Anonymous Pro", monospace;
     font-size: 20px;
@@ -36,29 +40,13 @@ const Container = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
     .wrapper {
-      margin-top: 55px;
+      margin-top: 8%;
       padding-top: 12px;
       padding-left: 12px;
       width: 385px;
       height: 145px;
       border-radius: 15px;
       box-shadow: 0px 0px 7px 3px #0000001a;
-    }
-
-    .wrapper#margin {
-      position: absolute;
-      bottom: 480px;
-      
-    }
-
-    .wrapper#margin {
-      position: absolute;
-      bottom: 430px;
-    }
-
-    .wrapper#margin1 {
-      position: absolute;
-      bottom: 220px;
     }
 
     .wrapper a {
@@ -114,7 +102,7 @@ const Main_Reviews = () => {
       <div className='main_cont'>
         <Text>
           <div className='upper_text'>
-            <h1 >Последние отзывы</h1><br></br><h2>16 y.o 10k pts shadow frend)) енджоеров</h2>
+            <h1 >Последние отзывы</h1><h2>16 y.o 10k pts shadow frend)) енджоеров</h2>
           </div>
         </Text>
         <Grid>

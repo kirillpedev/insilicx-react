@@ -9,7 +9,7 @@ const Button = styled.div`
     display: grid;
     grid-row-gap: 25px;
     right: 60px; /* Расстояние от правого края окна браузера */
-    top: 78%; /* Расстояние сверху */
+    top: 70%; /* Расстояние сверху */
 
     .round-button {
         width: 70px; height: 70px;
