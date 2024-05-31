@@ -1,7 +1,7 @@
+import dress1 from '/src/img/dress1.png'
 import React from 'react'
 import styled from 'styled-components'
-import dress1 from '/src/img/dress1.png'
-
+import {useLocation} from 'react-router-dom';
 const Main = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -66,7 +66,9 @@ const Buttons = styled.div`
         background-color: #ffff;
     }
 
-    .decision :hover {
+    .decision :hover {\
+
+
         box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
         background-color: #000;
         color: #ffff;
@@ -85,14 +87,15 @@ const Buttons = styled.div`
 
 
 const ProductPageMain = () => {
+    const location = useLocation();
   return (
         <div className='main'>
             <Main>
                 <div className='product'>
-                    <img src={dress1} alt="" width="540" height="560"/>
+                    <img src={location.state.photo} alt="" width="540" height="560"/>
                     <div className='info'>
-                        <p>Hoodie “Bloody title?44” black</p>
-                        <h1>4 500 ₽</h1>
+                        <p>{location.state.name}</p>
+                        <h1>{location.state.cost}</h1>
                         <Buttons>
                             <div className='decision'>
                                 <button>L</button>
@@ -113,3 +116,18 @@ const ProductPageMain = () => {
 }
 
 export default ProductPageMain
+// function ComponentB() {
+
+//     const location = useLocation();
+   
+//         return (
+
+//             <>
+               
+// <div>{location.state.name} {location.state.id}</div>
+
+//             </>
+//         )
+//     }
+
+// export default ComponentB;

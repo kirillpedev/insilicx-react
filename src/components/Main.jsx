@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { useNavigate} from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components'
 import dress1 from '/src/img/dress1.png'
 import dress2 from '/src/img/dress2.png'
@@ -6,7 +9,7 @@ import dress3 from '/src/img/dress3.png'
 import dress4 from '/src/img/dress4.png'
 import dress5 from '/src/img/dress5.png'
 import dress6 from '/src/img/dress6.png'
-
+const TITLE = 'Каталог | Insilicx inc.';
 
 const Span = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -41,46 +44,50 @@ const Span = styled.div`
 `
 
 const Main = () => {
+    const navigate = useNavigate();
   return (
     <Span>
+        <Helmet>
+          <title>{ TITLE }</title>
+        </Helmet>
         <div className='span'>
             <div className='content'>
-                <a href=''><img src={dress1} alt="" width="300" height="300"/></a>
+                <a href= '' onClick={()=>{navigate('/product',{state:{id:1,name:'Longsleeve “Slava nashim” black', cost: '6 499 ₽', photo: '/src/img/dress1.png'}})}}><img src={dress1} alt="" width="300" height="300"/></a>
                     <h1>Longsleeve “Slava nashim” black
                     <h2>6 499 ₽ </h2>
                 </h1>
             </div>
 
             <div className='content'>
-            <a href=''><img src={dress4} alt="" width="300" height="300"/></a>
+            <a href='' onClick={()=>{navigate('/product',{state:{id:2,name:'Hoodie “Bloody title?44” black', cost: '4 500 ₽', photo: '/src/img/dress4.png'}})}}><img src={dress4} alt="" width="300" height="300"/></a>
                     <h1>Hoodie “Bloody title?44” black 
                     <h2>4 500 ₽</h2>
                 </h1>
             </div>
 
             <div className='content'>
-            <a href=''><img src={dress2} alt="" width="300" height="300"/></a>
+            <a href= '' onClick={()=>{navigate('/product',{state:{id:3,name:'Hoodie “Chxse the sun” black', cost: '7 000 ₽', photo: '/src/img/dress2.png'}})}}><img src={dress2} alt="" width="300" height="300"/></a>
                     <h1>Hoodie “Chxse the sun” black
                     <h2>7 000 ₽ </h2>
                 </h1>
             </div>
 
             <div className='content'>
-            <a href=''><img src={dress3} alt="" width="300" height="300"/></a>
+            <a href= '' onClick={()=>{navigate('/product',{state:{id:4,name:'Longsleeve “Tanikawai” black', cost: '5 299 ₽', photo: '/src/img/dress3.png'}})}}><img src={dress3} alt="" width="300" height="300"/></a>
                     <h1>Longsleeve “Tanikawai” black
                     <h2>5 299 ₽ </h2>
                 </h1>
             </div>
 
             <div className='content'>
-            <a href=''><img src={dress5} alt="" width="300" height="300"/></a>
+            <a href='' onClick={()=>{navigate('/product',{state:{id:5,name:'Hoodie “the hate” black', cost: '3 500 ₽', photo: '/src/img/dress5.png'}})}}><img src={dress5} alt="" width="300" height="300"/></a>
                     <h1>Hoodie “the hate” black
                     <h2>3 500 ₽ </h2>
                 </h1>
             </div>
 
             <div className='content'>
-            <a href=''><img src={dress6} alt="" width="300" height="300"/></a>
+            <a href='' onClick={()=>{navigate('/product',{state:{id:6,name:'Longsleeve “1’m tired” black', cost: '6 999 ₽', photo: '/src/img/dress6.png'}})}}><img src={dress6} alt="" width="300" height="300"/></a>
                     <h1>Longsleeve “1’m tired” black
                     <h2>6 999 ₽ </h2>
                 </h1>
@@ -90,4 +97,22 @@ const Main = () => {
   )
 }
 
-export default Main
+export default Main;
+
+// function ComponentA(props) {
+
+//     const navigate = useNavigate();
+  
+//     const toComponentB=()=>{
+//         navigate('/productpage',{state:{id:1,name:'asdasd'}});
+//     }
+  
+//     return (
+//             <>
+//         <div><a onClick={()=>{toComponentB()}}>Component B</a></div>
+//         </>
+//     )
+  
+  
+//   }
+// export default ComponentA;
