@@ -36,6 +36,7 @@ const Button = styled.div`
     .button-1 {
         justify-content: center;
         display: flex;
+        margin-left: 20px;
 
     }
     button {
@@ -53,7 +54,7 @@ const Button = styled.div`
 `
 const Error404 = () => {
   return (
-    <div>
+    <div className='main'>
       <Text>
         <h1>404</h1>
       </Text>
