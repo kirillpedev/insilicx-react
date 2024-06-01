@@ -11,12 +11,17 @@ const Main = styled.div`
         margin-right: auto;
         margin-top: 150px;
         margin-bottom: 150px;
-        width: 800px;
+        width: 1200px;
     }
     .product p {
         font-family: "Noto Sans", sans-serif;
         font-size: 32px;
         font-weight: 300;
+        
+    }
+    .product img {
+        margin-right: 15%;
+
     }
 
     .product h2 {
@@ -66,7 +71,7 @@ const Buttons = styled.div`
         background-color: #ffff;
     }
 
-    .decision :hover {\
+    .decision :hover {
 
 
         box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
@@ -116,18 +121,3 @@ const ProductPageMain = () => {
 }
 
 export default ProductPageMain
-// function ComponentB() {
-
-//     const location = useLocation();
-   
-//         return (
-
-//             <>
-               
-// <div>{location.state.name} {location.state.id}</div>
-
-//             </>
-//         )
-//     }
-
-// export default ComponentB;

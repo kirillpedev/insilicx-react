@@ -98,21 +98,3 @@ const Main = () => {
 }
 
 export default Main;
-
-// function ComponentA(props) {
-
-//     const navigate = useNavigate();
-  
-//     const toComponentB=()=>{
-//         navigate('/productpage',{state:{id:1,name:'asdasd'}});
-//     }
-  
-//     return (
-//             <>
-//         <div><a onClick={()=>{toComponentB()}}>Component B</a></div>
-//         </>
-//     )
-  
-  
-//   }
-// export default ComponentA;
