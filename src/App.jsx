@@ -1,7 +1,8 @@
-import React from 'react'
-import Home from './pages/Home'
-import Reviews from './pages/Reviews'
+import React from 'react';
+import Home from './pages/Home';
+import Reviews from './pages/Reviews';
 import ErrorPage from './pages/ErrorPage';
+import SliderPage from './pages/SliderPage';
 // import ProductPage from './pages/ProductPage';
 import ProductPage, {
   loader,
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "product/:id",
     element: <ProductPage />,
+    loader: loader,
+  },
+  {
+    path: "photo",
+    element: <SliderPage />,
     loader: loader,
   }
   
