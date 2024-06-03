@@ -9,6 +9,8 @@ import dress3 from '/src/img/dress3.png'
 import dress4 from '/src/img/dress4.png'
 import dress5 from '/src/img/dress5.png'
 import dress6 from '/src/img/dress6.png'
+import PortfolioItem from './PortfolioItem';
+import products from '../products';
 const TITLE = 'Каталог | Insilicx inc.';
 
 const Span = styled.div`
@@ -34,11 +36,16 @@ const Span = styled.div`
         font-family: "Noto Sans", sans-serif;
         font-size: 18px;
         font-weight: 300;
+        color: black;
+        text-decoration: none;
     }
     .content h2 {
         font-family: "Noto Sans", sans-serif;
         font-size: 24px;
         font-weight: 600;
+    }
+    a {
+        text-decoration: none;
     }
 
 `
@@ -51,6 +58,11 @@ const Main = () => {
           <title>{ TITLE }</title>
         </Helmet>
         <div className='span'>
+            {products.map((product) => (
+                <PortfolioItem key={product.id} work={product} />
+            ))}
+        </div>
+        {/* <div className='span'>
             <div className='content'>
                 <a href= '' onClick={()=>{navigate('/product',{state:{id:1,name:'Longsleeve “Slava nashim” black', cost: '6 499 ₽', photo: '/src/img/dress1.png'}})}}><img src={dress1} alt="" width="300" height="300"/></a>
                     <h1>Longsleeve “Slava nashim” black
@@ -92,7 +104,7 @@ const Main = () => {
                     <h2>6 999 ₽ </h2>
                 </h1>
             </div>
-        </div>
+        </div> */}
     </Span>
   )
 }

@@ -54,12 +54,16 @@ const Button = styled.div`
     }
 
     .button-1 :hover {
-        box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
+        /* box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19); */
         background-color: #ffff;
         font-size: 22px;
         color: #000;
         transition: 0.2s ease;
     }
+    form {
+      text-decoration: none;
+    }
+
 `
 const Error404 = () => {
   return (
@@ -75,7 +79,9 @@ const Error404 = () => {
       </Text3>
       <Button>
         <div className='button-1'>
+        <form action='/'>
           <button>Вернуться на главную</button>
+        </form>
         </div>
       </Button>
     </div>

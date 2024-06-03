@@ -1,7 +1,9 @@
 import dress1 from '/src/img/dress1.png'
 import React from 'react'
 import styled from 'styled-components'
-import {useLocation} from 'react-router-dom';
+import { Form, useLoaderData } from "react-router-dom";
+import products from '../products';
+
 const Main = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -28,7 +30,7 @@ const Main = styled.div`
         font-family: "Noto Sans", sans-serif;
         font-size: 20px;
         font-weight: normal;
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
     .info {
@@ -90,17 +92,51 @@ const Buttons = styled.div`
 
 `
 
+// const ProductPageMain = () => {
+//     const { id } = useLoaderData();
+//     const project = products.find(product => product.id === id);
+//     return (
+//         <div className='main'>
+//             <Main>
+//                 <div className='product'>
+//                     <img
+//                         src={project.screenshot}
+//                         alt=''
+//                         width={540}
+//                         height={560}
+//                     />
+//                     <div className='info'></div>
+//                     <p>{project.title}</p>
+//                     <h1>{project.cost}</h1>
+//                     <Buttons>
+//                            <div className='decision'>
+//                                 <button>L</button>
+//                                 <button>XL</button>
+//                             </div>
+//                     </Buttons>
+//                     <div className='button'>
+//                             <button>В корзину</button>
+//                     </div>
+//                     <h2>Гладкий плюш, оверсайз крой<br>
+//                     </br>Принт - машинная вышивка</h2>
+//                 </div>
+//             </div>
+//         </Main>
+
+//     )
+// }
 
 const ProductPageMain = () => {
-    const location = useLocation();
+    const { id } = useLoaderData();
+    const project = products.find(product => product.id === id);
   return (
         <div className='main'>
             <Main>
                 <div className='product'>
-                    <img src={location.state.photo} alt="" width="540" height="560"/>
+                    <img src={project.screenshot} alt="" width="540" height="560"/>
                     <div className='info'>
-                        <p>{location.state.name}</p>
-                        <h1>{location.state.cost}</h1>
+                        <p>{project.title}</p>
+                        <h1>{project.cost}</h1>
                         <Buttons>
                             <div className='decision'>
                                 <button>L</button>
@@ -110,8 +146,7 @@ const ProductPageMain = () => {
                         <div className='button'>
                             <button>В корзину</button>
                         </div>
-                        <h2>Гладкий плюш, оверсайз крой<br>
-                        </br>Принт - машинная вышивка</h2>
+                        <h2>{project.description}</h2>
                     </div>
                 </div>
             </Main>
@@ -119,5 +154,34 @@ const ProductPageMain = () => {
     
   )
 }
+//{/* 
+// const ProductPageMain = () => {
+//     const location = useLocation();
+//   return (
+//         <div className='main'>
+//             <Main>
+//                 <div className='product'>
+//                     <img src={location.state.photo} alt="" width="540" height="560"/>
+//                     <div className='info'>
+//                         <p>{location.state.name}</p>
+//                         <h1>{location.state.cost}</h1>
+//                         <Buttons>
+//                             <div className='decision'>
+//                                 <button>L</button>
+//                                 <button>XL</button>
+//                             </div>
+//                         </Buttons>
+//                         <div className='button'>
+//                             <button>В корзину</button>
+//                         </div>
+//                         <h2>Гладкий плюш, оверсайз крой<br>
+//                         </br>Принт - машинная вышивка</h2>
+//                     </div>
+//                 </div>
+//             </Main>
+//         </div>
+    
+//   )
+// } */}
 
 export default ProductPageMain
