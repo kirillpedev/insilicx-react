@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useRouteError } from "react-router-dom";
 const Text = styled.div`
    h1 {
-    margin-top: 10%;
+    margin-top: 3%;
     font-family: "Noto Sans", sans-serif;
     font-size: 164px;
     font-weight: bold;
@@ -65,7 +66,9 @@ const Button = styled.div`
     }
 
 `
-const Error404 = () => {
+export default function ErrorPage() {
+  const error = useRouteError();
+  console.error(error);
   return (
     <div className='main'>
       <Text>
@@ -88,4 +91,3 @@ const Error404 = () => {
   )
 }
 
-export default Error404

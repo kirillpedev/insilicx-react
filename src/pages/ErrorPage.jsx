@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Error404 from "../components/Error404";
 
-function ErrorPage() {
+const ErrorPage = () => {
   return (
     <div> 
         <Header/>
