@@ -1,5 +1,5 @@
 import dress1 from '/src/img/dress1.png'
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components'
 import { Form, useLoaderData } from "react-router-dom";
 import products from '../products';
@@ -8,6 +8,11 @@ import NotAvalibale from "../components/NotAvalibale";
 const Main = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+    .product .info #error {
+        display: none ;
+        color: red;
+        font-weight: 400;
+    }
     .product {
         display: flex;
         margin-left: auto;
@@ -63,8 +68,8 @@ const Main = styled.div`
 
 const Buttons = styled.div`
     .decision button {
-        width: 40px;
-        height: 40px;
+        max-width: 40px;
+        max-height: 40px;
         margin-right: 10px;
         margin-bottom: 10px;
         font-family: "Noto Sans", sans-serif;
@@ -73,7 +78,17 @@ const Buttons = styled.div`
         color: #000;
         background-color: #ffff;
     }
-
+    .decision .decision__active {
+    max-width: 40px;
+    max-height: 40px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+   } 
     .decision :hover {
 
 
@@ -82,7 +97,7 @@ const Buttons = styled.div`
         color: #ffff;
         transition: 0.2s ease;
     }
-    .decision :focus {
+    /* .decision :focus {
         background-color: #000;
         color: #ffff;
    }
@@ -90,46 +105,55 @@ const Buttons = styled.div`
     background-color: #000;
     color: #ffff;
    }
+    */
+
 
 `
-
-// const ProductPageMain = () => {
-//     const { id } = useLoaderData();
-//     const project = products.find(product => product.id === id);
-//     return (
-//         <div className='main'>
-//             <Main>
-//                 <div className='product'>
-//                     <img
-//                         src={project.screenshot}
-//                         alt=''
-//                         width={540}
-//                         height={560}
-//                     />
-//                     <div className='info'></div>
-//                     <p>{project.title}</p>
-//                     <h1>{project.cost}</h1>
-//                     <Buttons>
-//                            <div className='decision'>
-//                                 <button>L</button>
-//                                 <button>XL</button>
-//                             </div>
-//                     </Buttons>
-//                     <div className='button'>
-//                             <button>В корзину</button>
-//                     </div>
-//                     <h2>Гладкий плюш, оверсайз крой<br>
-//                     </br>Принт - машинная вышивка</h2>
-//                 </div>
-//             </div>
-//         </Main>
-
-//     )
-// }
 
 const ProductPageMain = () => {
     const { id } = useLoaderData();
     const project = products.find(product => product.id === id);
+    const myRef = useRef(null);
+    const [activebtn, passivebtn] = useState(true);
+    const [activebtn1, passivebtn1] = useState(true);
+    const change = () => {
+        passivebtn(!activebtn);
+        console.log(activebtn)
+    }
+    const change1 = () => {
+        passivebtn1(!activebtn1);
+        console.log(activebtn1)
+     }
+    
+    const changebtn = activebtn ? 'decision' : 'decision__active';
+    const changebtn1 = activebtn1 ? 'decision' : 'decision__active';
+    if (!activebtn && !activebtn1) {
+        change();
+        change1();
+        console.log('L activebtn')
+    }
+    if(!activebtn || !activebtn1) {
+        const cor = document.getElementById('error');
+        console.log(cor)
+        cor.style.display = 'none';
+    }
+    useEffect(() => {
+      myRef.current.addEventListener('click', handleClick);
+      return () => {
+        myRef.current.removeEventListener('click', handleClick);
+      };
+    }, []);
+  
+    const handleClick = (event) => {
+        console.log('L')
+        console.log('XL')
+        if (activebtn && activebtn1) {
+            const cor = document.getElementById('error');
+            console.log(cor)
+            cor.style.display = 'block';
+        } 
+    };
+
     if(!project) {
         return ( 
             <div> 
@@ -155,12 +179,15 @@ const ProductPageMain = () => {
                         <h1>{project.cost}</h1>
                         <Buttons>
                             <div className='decision'>
-                                <button>L</button>
-                                <button>XL</button>
+                                <button onClick={change} className={changebtn}>L</button>
+                                <button onClick={change1} className={changebtn1}>XL</button>
                             </div>
                         </Buttons>
+                        <div id='error'>
+                            Ошибка: Выберите размер
+                        </div>
                         <div className='button'>
-                            <button>В корзину</button>
+                            <button ref={myRef} className='addCart'>В корзину</button>
                         </div>
                         <h2>{project.description}</h2>
                     </div>
@@ -201,5 +228,37 @@ const ProductPageMain = () => {
     
 //   )
 // } */}
+// const ProductPageMain = () => {
+//     const { id } = useLoaderData();
+//     const project = products.find(product => product.id === id);
+//     return (
+//         <div className='main'>
+//             <Main>
+//                 <div className='product'>
+//                     <img
+//                         src={project.screenshot}
+//                         alt=''
+//                         width={540}
+//                         height={560}
+//                     />
+//                     <div className='info'></div>
+//                     <p>{project.title}</p>
+//                     <h1>{project.cost}</h1>
+//                     <Buttons>
+//                            <div className='decision'>
+//                                 <button>L</button>
+//                                 <button>XL</button>
+//                             </div>
+//                     </Buttons>
+//                     <div className='button'>
+//                             <button>В корзину</button>
+//                     </div>
+//                     <h2>Гладкий плюш, оверсайз крой<br>
+//                     </br>Принт - машинная вышивка</h2>
+//                 </div>
+//             </div>
+//         </Main>
 
+//     )
+// }
 export default ProductPageMain
