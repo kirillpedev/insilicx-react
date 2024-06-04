@@ -9,6 +9,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Pagination, Autoplay } from 'swiper/modules';
+
 import slide_1 from '/src/img/slide_1.svg'
 import slide_2 from '/src/img/slide_2.svg'
 import slide_3 from '/src/img/slide_3.svg'
@@ -52,18 +54,25 @@ const Slider = () => {
         <div className='slider'>
         <h1>Примеры TripleS лука<h2>если ты 15 y.o 2k pts arc warden енджоер</h2></h1>
             <Swiper
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
             grabCursor={true}
             effect={'creative'}
+            pagination={{
+              clickable: true,
+            }}
             creativeEffect={{
               prev: {
-                shadow: true,
-                translate: [0, 0, -400],
+                
+                translate: [0, 0, -700],
               },
               next: {
                 translate: ['100%', 0, 0],
               },
             }}
-            modules={[EffectCreative]}
+            modules={[Autoplay, Pagination, EffectCreative]}
             className="mySwiper"
             >
                 <SwiperSlide>
