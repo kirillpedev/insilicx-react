@@ -1,5 +1,5 @@
 import dress1 from '/src/img/dress1.png'
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components'
 import { Form, useLoaderData } from "react-router-dom";
 import products from '../products';
@@ -137,7 +137,6 @@ const Buttons = styled.div`
 const ProductPageMain = () => {
     const { id } = useLoaderData();
     const project = products.find(product => product.id === id);
-
     return (
         <div className='main'>
             <Main>
@@ -148,8 +147,8 @@ const ProductPageMain = () => {
                         <h1>{project.cost}</h1>
                         <Buttons>
                             <div className='decision'>
-                                <button disabled=''>L</button>
-                                <button>XL</button>
+                                <button disabled='disabled'>L</button>
+                                <button disabled='disabled'>XL</button>
                             </div>
                         </Buttons>
                         <div className='button'>

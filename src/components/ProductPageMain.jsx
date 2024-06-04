@@ -113,6 +113,20 @@ const Buttons = styled.div`
 const ProductPageMain = () => {
     const { id } = useLoaderData();
     const project = products.find(product => product.id === id);
+    if(!project) {
+        return ( 
+            <div> 
+            <Error404/>
+            </div>  
+        )
+    } 
+    else if(!project.available) {
+        return ( 
+            <div> 
+            <NotAvalibale/>
+            </div>  
+        )
+    }
     const myRef = useRef(null);
     const [activebtn, passivebtn] = useState(true);
     const [activebtn1, passivebtn1] = useState(true);
@@ -153,22 +167,6 @@ const ProductPageMain = () => {
             cor.style.display = 'block';
         } 
     };
-
-    if(!project) {
-        return ( 
-            <div> 
-            <Error404/>
-            </div>  
-        )
-    } 
-    else if(!project.available) {
-        return ( 
-            <div> 
-            <NotAvalibale/>
-            </div>  
-        )
-    }
-    else {
   return (
         <div className='main'>
             <Main>
@@ -197,7 +195,6 @@ const ProductPageMain = () => {
     
   )
     }
-}
 //}
 //{/* 
 // const ProductPageMain = () => {
