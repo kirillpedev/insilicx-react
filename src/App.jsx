@@ -27,9 +27,8 @@ const router = createBrowserRouter([
     loader: loader,
   },
   {
-    path: "photo",
-    element: <SliderPage />,
-    loader: loader,
+    path: "photos",
+    element: <SliderPage />
   }
   
 ])

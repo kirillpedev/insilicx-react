@@ -13,6 +13,7 @@ export default [
         description: 'Гладкий плюш, оверсайз крой\nПринт - машинная вышивка',
         screenshot: dress1,
         link: '#',
+        available: false,
     },
     {
         id: '2',
@@ -21,6 +22,7 @@ export default [
         screenshot: dress2,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
+        available: true,
     },
     {
         id: '3',
@@ -29,6 +31,7 @@ export default [
         screenshot: dress3,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
+        available: false,
     },
     {
         id: '4',
@@ -37,6 +40,7 @@ export default [
         screenshot: dress4,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
+        available: false,
     },
     {
         id: '5',
@@ -45,6 +49,7 @@ export default [
         screenshot: dress5,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
+        available: false,
     },
     {
         id: '6',
@@ -53,5 +58,7 @@ export default [
         screenshot: dress6,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
-    }
+        available: false,
+    },
+    
 ];

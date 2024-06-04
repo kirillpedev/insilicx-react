@@ -57,11 +57,11 @@ const Header = () => {
     <Container>
       <div className='header_main'>
       <div className='header'>
-        <h1><a href='/'>Смешные цены</a></h1>
+        <h1><a href='/'>Insilicx inc.</a></h1>
           <Menu>
             <ul class="menu">
                 <li><a href='/'>Каталог</a></li>
-                <li><a href=''>Фото</a></li>
+                <li><a href='/photos'>Фото</a></li>
                 <li><a href='/reviews'>Отзывы</a></li>
             </ul>
           </Menu>
