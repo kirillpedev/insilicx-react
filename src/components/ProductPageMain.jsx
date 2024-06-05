@@ -130,6 +130,10 @@ const ProductPageMain = () => {
     const myRef = useRef(null);
     const [activebtn, passivebtn] = useState(true);
     const [activebtn1, passivebtn1] = useState(true);
+    const [addCart, delCart] = useState(true);
+    const changeCart = () => {
+        delCart(!addCart);
+    }
     const change = () => {
         passivebtn(!activebtn);
         console.log(activebtn)
@@ -141,6 +145,7 @@ const ProductPageMain = () => {
     
     const changebtn = activebtn ? 'decision' : 'decision__active';
     const changebtn1 = activebtn1 ? 'decision' : 'decision__active';
+    const changecart = addCart ? 'В корзину' : 'Убрать из корзины';
     if (!activebtn && !activebtn1) {
         change();
         change1();
@@ -151,22 +156,36 @@ const ProductPageMain = () => {
         console.log(cor)
         cor.style.display = 'none';
     }
-    useEffect(() => {
-      myRef.current.addEventListener('click', handleClick);
-      return () => {
-        myRef.current.removeEventListener('click', handleClick);
-      };
-    }, []);
-  
-    const handleClick = (event) => {
-        console.log('L')
-        console.log('XL')
+
+    
+    // useEffect(() => {
+    //   myRef.current.addEventListener('click', handleClick, {
+    //     capture: false,
+    //     once: false,
+    //     passive: false,
+    // });
+    //   return () => {
+    //     myRef.current.removeEventListener('click', handleClick);
+    //   };
+    // }, []);
+    function handleSubmit(e) {
+        e.preventDefault();
         if (activebtn && activebtn1) {
-            const cor = document.getElementById('error');
-            console.log(cor)
-            cor.style.display = 'block';
+                    const cor = document.getElementById('error');
+                    console.log(cor)
+                    cor.style.display = 'block';
         } 
-    };
+        else {
+            changeCart();
+        }
+      }
+    // const handleClick = (event) => {
+    //     if (activebtn && activebtn1) {
+    //         const cor = document.getElementById('error');
+    //         console.log(cor)
+    //         cor.style.display = 'block';
+    //     } 
+    // };
   return (
         <div className='main'>
             <Main>
@@ -185,7 +204,7 @@ const ProductPageMain = () => {
                             Ошибка: Выберите размер
                         </div>
                         <div className='button'>
-                            <button ref={myRef} className='addCart'>В корзину</button>
+                            <button onClick={handleSubmit} className='addCart'>{changecart}</button>
                         </div>
                         <h2>{project.description}</h2>
                     </div>
