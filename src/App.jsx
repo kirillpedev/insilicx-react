@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Reviews from './pages/Reviews';
 import ErrorPage from './pages/ErrorPage';
 import SliderPage from './pages/SliderPage';
+import Order from './pages/Order';
 // import ProductPage from './pages/ProductPage';
 import ProductPage, {
   loader,
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "photos",
     element: <SliderPage />
+  },
+  {
+    path: "order",
+    element: <Order />
   }
   
 ])

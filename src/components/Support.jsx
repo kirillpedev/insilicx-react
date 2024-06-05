@@ -85,8 +85,7 @@ const Button = styled.div`
     }
 
    
-
-    .round-button {
+    .round_button {
         width: 70px; 
         height: 70px;
         background-color: white;
@@ -94,6 +93,13 @@ const Button = styled.div`
         border: none;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
         cursor: pointer;
+    }
+
+    .round h1 {
+        position: absolute;
+        margin-left: 50px;
+        font-weight: 200;
+        font-size: 32px;
     }
 
 `
@@ -114,10 +120,14 @@ export default function Support() {
             </div>
         </Chat>
         <div className='btn_pos'>
-            <button className='round-button'>
+            <div className='round'>
+                <h1>4</h1>
+            </div>
+                
+            <button className='round_button'>
                 <img src={shoppingbag} width={38} height={38} alt=""/>
             </button>
-            <button className='round-button'>
+            <button className='round_button'>
                 <img src={headsetsvg} alt=""/>
             </button>
         </div>
