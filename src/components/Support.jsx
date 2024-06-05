@@ -84,6 +84,15 @@ const Button = styled.div`
         top: 70%; /* Расстояние сверху */
     }
 
+    .round {
+        width: 35px;
+        height: 35px;
+        border-radius: 150px;
+        margin-left: 50px;
+        background-color: #1E1E1E;
+        position: absolute;
+    }
+
    
     .round_button {
         width: 70px; 
@@ -95,11 +104,14 @@ const Button = styled.div`
         cursor: pointer;
     }
 
+    
     .round h1 {
-        position: absolute;
-        margin-left: 50px;
+        color:  white;
+        font-family: "Noto Sans", sans-serif;
+        margin-left: 10px;
         font-weight: 200;
-        font-size: 32px;
+        font-size: 24px;
+        font-weight: 600;
     }
 
 `
@@ -121,7 +133,7 @@ export default function Support() {
         </Chat>
         <div className='btn_pos'>
             <div className='round'>
-                <h1>4</h1>
+                <h1>3</h1>
             </div>
                 
             <button className='round_button'>

@@ -152,10 +152,12 @@ const OrderInput = styled.div`
     }
 
     .input_mass input {
-        width: 580px;
+        width: 570px;
         height: 30px;
         border-color: #D6D6D6;
         border-style: solid;
+        border-radius: 2px;
+        padding-left: 10px;
     }
 
     .input_mass select {
@@ -166,7 +168,7 @@ const OrderInput = styled.div`
     }
 
     .input_mass #short {
-        width: 348px;
+        width: 332px;
         height: 35px;
         border-color: #D6D6D6;
         border-style: solid;
@@ -190,6 +192,12 @@ const OrderInput = styled.div`
         width: 580px;
         height: 45px;
         margin-bottom: 5px;
+        border-radius: 2px;
+    }
+
+    .input_mass ::placeholder{
+        padding-left: 10px;
+        color: #B3B3B3;
     }
 
     .input_mass #radio{
@@ -216,10 +224,6 @@ const OrderInput = styled.div`
 
     .input_mass #town{
         margin-top: 14px;
-    }
-
-
-    .input_mass a {
     }
 
     .input_mass button {
