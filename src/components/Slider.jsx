@@ -26,7 +26,7 @@ const Photo = styled.div`
         text-align: center;
         margin-right: 20%;
         margin-left: 15%;
-        margin-bottom: 10%;
+        margin-bottom: 8%;
         margin-top: 50px;
     }
 
@@ -43,6 +43,13 @@ const Photo = styled.div`
         font-family: "Anonymous Pro", monospace;
         font-size: 20px;
         font-weight: 500;
+    }
+
+    .slider img {
+      border-radius: 10px;
+      box-shadow: #5e5e5e63 6px 5px 20px ;
+      margin-bottom: 30px;
+      
     }
 `
 
@@ -66,29 +73,29 @@ const Slider = () => {
             creativeEffect={{
               prev: {
                 
-                translate: [0, 0, -700],
+                translate: [-400, 0, -700],
               },
               next: {
-                translate: ['100%', 0, 0],
+                translate: [400, 0, -800],
               },
             }}
             modules={[Autoplay, Pagination, EffectCreative]}
             className="mySwiper"
             >
                 <SwiperSlide>
-                <img src={slide_1} alt="" />
+                <img src={slide_1} alt="" width= '535px' height= '535px' />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide_1} alt="" />
+                <img src={slide_1} alt="" width= '535px' height= '535px' />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide_1} alt="" />
+                <img src={slide_1} alt="" width= '535px' height= '535px' />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide_2} alt="" />
+                <img src={slide_2} alt="" width= '535px' height= '535px' />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide_3} alt="" />
+                <img src={slide_3} alt="" width= '535px' height= '535px' />
             </SwiperSlide>
             </Swiper>
         </div>
