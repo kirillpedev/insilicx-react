@@ -84,7 +84,8 @@ const Button = styled.div`
         top: 70%; /* Расстояние сверху */
     }
 
-    .round {
+    #round {
+        display: none;
         width: 35px;
         height: 35px;
         border-radius: 150px;
@@ -105,7 +106,7 @@ const Button = styled.div`
     }
 
     
-    .round h1 {
+    #round h1 {
         color:  white;
         font-family: "Noto Sans", sans-serif;
         margin-left: 10px;
@@ -132,13 +133,14 @@ export default function Support() {
             </div>
         </Chat>
         <div className='btn_pos'>
-            <div className='round'>
-                <h1>3</h1>
+            <div id='round'>
+                <h1 id='total_basket'>1</h1>
             </div>
-                
+            <form action='/basket'>    
             <button className='round_button'>
                 <img src={shoppingbag} width={38} height={38} alt=""/>
             </button>
+            </form>
             <button className='round_button'>
                 <img src={headsetsvg} alt=""/>
             </button>
