@@ -9,7 +9,7 @@ export default [
     {
         id: '1',
         title: 'Longsleeve “Slava nashim” black',
-        cost: '6 499 ₽',
+        cost: '6 499',
         description: 'Гладкий плюш, оверсайз крой\nПринт - машинная вышивка',
         screenshot: dress1,
         link: '#',
@@ -18,7 +18,7 @@ export default [
     {
         id: '2',
         title: 'Hoodie “Bloody title?44” black',
-        cost: '4 500 ₽',
+        cost: '4 500',
         screenshot: dress2,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
@@ -27,7 +27,7 @@ export default [
     {
         id: '3',
         title: 'Hoodie “Chxse the sun” black',
-        cost: '7 000 ₽',
+        cost: '7 000',
         screenshot: dress3,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
@@ -36,7 +36,7 @@ export default [
     {
         id: '4',
         title: 'Longsleeve “Tanikawai” black',
-        cost: '5 299 ₽',
+        cost: '5 299',
         screenshot: dress4,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
@@ -45,7 +45,7 @@ export default [
     {
         id: '5',
         title: 'Hoodie “the hate” black',
-        cost: '3 500 ₽',
+        cost: '3 500',
         screenshot: dress5,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
@@ -54,7 +54,7 @@ export default [
     {
         id: '6',
         title: 'Longsleeve “1’m tired” black',
-        cost: '6 999 ₽',
+        cost: '6 999',
         screenshot: dress6,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',

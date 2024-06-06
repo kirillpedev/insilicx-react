@@ -11,6 +11,7 @@ const Main = styled.div`
     .product .info #error {
         display: none ;
         color: red;
+        font-size: 20px;
         font-weight: 400;
     }
     .product {
@@ -89,14 +90,14 @@ const Buttons = styled.div`
     color: #fff;
     background-color: #000;
    } 
-    .decision :hover {
+    /* .decision :hover {
 
 
         box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
         background-color: #000;
         color: #ffff;
         transition: 0.2s ease;
-    }
+    } */
     /* .decision :focus {
         background-color: #000;
         color: #ffff;
@@ -136,11 +137,9 @@ const ProductPageMain = () => {
     }
     const change = () => {
         passivebtn(!activebtn);
-        console.log(activebtn)
     }
     const change1 = () => {
         passivebtn1(!activebtn1);
-        console.log(activebtn1)
      }
     
     const changebtn = activebtn ? 'decision' : 'decision__active';
@@ -149,34 +148,64 @@ const ProductPageMain = () => {
     if (!activebtn && !activebtn1) {
         change();
         change1();
-        console.log('L activebtn')
+        const error = document.getElementById('error');
+        error.style.display = 'block';
+        error.innerHTML = 'Ошибка: выберите один размер.'
     }
-    if(!activebtn || !activebtn1) {
-        const cor = document.getElementById('error');
-        console.log(cor)
-        cor.style.display = 'none';
+    else if(!activebtn || !activebtn1) {
+        const error = document.getElementById('error');
+        // console.log(error);
+        error.style.display = 'none';
+        error.innerHTML = 'Ошибка: Выберите размер.'
     }
 
-    
-    // useEffect(() => {
-    //   myRef.current.addEventListener('click', handleClick, {
-    //     capture: false,
-    //     once: false,
-    //     passive: false,
-    // });
-    //   return () => {
-    //     myRef.current.removeEventListener('click', handleClick);
-    //   };
-    // }, []);
-    function handleSubmit(e) {
+    function select_l(e) {
+        e.preventDefault();
+        change();
+    }
+    function select_xl(e) {
+        e.preventDefault();
+        change1();
+    }
+    function AddToCart(e) {
         e.preventDefault();
         if (activebtn && activebtn1) {
-                    const cor = document.getElementById('error');
-                    console.log(cor)
-                    cor.style.display = 'block';
+                    const error = document.getElementById('error');
+                    error.style.display = 'block';
         } 
-        else {
+        else if ((!activebtn || !activebtn1) && addCart) {
+            // console.log('da, кнопка: ', addCart)
             changeCart();
+            const round = document.getElementById('round'); 
+            const total = document.getElementById('total_basket'); 
+            const size_l = document.getElementById('button_l')
+            const size_xl = document.getElementById('button_xl')
+            // console.log(size_l, size_xl)
+            size_l.setAttribute('disabled', '');
+            size_xl.setAttribute('disabled', '');
+            size_l.style.cursor =  'not-allowed';
+            size_xl.style.cursor =  'not-allowed';
+            round.style.display = 'block'
+            total.innerHTML = '1'
+            // console.log(total)
+            // console.log(project)
+        }
+        else if ((!activebtn || !activebtn1) && !addCart) {
+            changeCart();
+            // console.log('da !addcart', addCart)
+            const round = document.getElementById('round'); 
+            const total = document.getElementById('total_basket'); 
+            round.style.display = 'none'
+            total.innerHTML = '0'
+            const size_l = document.getElementById('button_l')
+            const size_xl = document.getElementById('button_xl')
+            size_l.style.cursor =  '';
+            size_xl.style.cursor =  '';
+            // console.log(size_l, size_xl)
+            size_l.removeAttribute('disabled', '');
+            size_xl.removeAttribute('disabled', '');
+            // console.log(total)
+            // console.log(project)
         }
       }
     // const handleClick = (event) => {
@@ -193,18 +222,18 @@ const ProductPageMain = () => {
                     <img src={project.screenshot} alt="" width="540" height="560"/>
                     <div className='info'>
                         <p>{project.title}</p>
-                        <h1>{project.cost}</h1>
+                        <h1>{project.cost} ₽</h1>
                         <Buttons>
                             <div className='decision'>
-                                <button onClick={change} className={changebtn}>L</button>
-                                <button onClick={change1} className={changebtn1}>XL</button>
+                                <button id='button_l' onClick={select_l} className={changebtn}>L</button>
+                                <button id='button_xl' onClick={select_xl} className={changebtn1}>XL</button>
                             </div>
                         </Buttons>
-                        <div id='error'>
+                        <h1 id='error'>
                             Ошибка: Выберите размер
-                        </div>
+                        </h1>
                         <div className='button'>
-                            <button onClick={handleSubmit} className='addCart'>{changecart}</button>
+                            <button onClick={AddToCart} className='addCart'>{changecart}</button>
                         </div>
                         <h2>{project.description}</h2>
                     </div>

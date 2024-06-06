@@ -4,6 +4,8 @@ import Reviews from './pages/Reviews';
 import ErrorPage from './pages/ErrorPage';
 import SliderPage from './pages/SliderPage';
 import Order from './pages/Order';
+import Bag from './components/Bag';
+import Products from './products';
 // import ProductPage from './pages/ProductPage';
 import ProductPage, {
   loader,
@@ -12,6 +14,7 @@ import ProductPage, {
 import {
   createBrowserRouter,
   RouterProvider, Route, redirect } from "react-router-dom";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "order",
     element: <Order />
+  },
+  {
+    path: "basket",
+    element: <Bag />
   }
   
 ])
