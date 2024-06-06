@@ -5,6 +5,12 @@ import close from '/src/img/close.svg'
 
 
 const Main = styled.div`
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+    * {
+        font-family: "Noto Sans", sans-serif;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -24,10 +30,9 @@ const OrderInfo = styled.div`
     }
 
     .content h1 {
-        padding-left: 20px;
         padding-bottom: 40px;
         font-family: "Noto Sans", sans-serif;
-        font-size: 32px;
+        font-size: 40px;
         font-weight: 500;
     }
 
@@ -132,122 +137,16 @@ const OrderInfo = styled.div`
 const OrderInput = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-    .input_mass  {
-        display: block;
-    }
-
-    .input_mass p  {
-        font-size: 32px;
-        font-family: "Noto Sans", sans-serif;
-        font-weight: 500;
-        margin-bottom: 2%;
-    }
-
-    .input_mass h1  {
-        font-size: 16px;
-        font-family: "Noto Sans", sans-serif;
-        font-weight: 300;
-        margin-bottom: 6px;
-        margin-top: 7px;
-    }
-
-    .input_mass input {
-        width: 570px;
-        height: 30px;
-        border-color: #D6D6D6;
-        border-style: solid;
-        border-radius: 2px;
-        padding-left: 10px;
-    }
-
-    .input_mass select {
-        width: 588px;
-        height: 35px;
-        border-color: #D6D6D6;
-        border-style: solid;
-    }
-
-    .input_mass #short {
-        width: 332px;
-        height: 35px;
-        border-color: #D6D6D6;
-        border-style: solid;
-    }
-
-    .input_mass #shorter {
-        margin-left: 6px;
-        width: 218px;
-        height: 35px;
-        border-color: #D6D6D6;
-        border-style: solid;
-    }
-
-    .input_mass #text_margin {
-        margin-top: 40px;
-    }
-
-    .radio_decision {
-        border: 2px solid;
-        border-color: #D6D6D6;
+    .input_mass {
         width: 580px;
-        height: 45px;
-        margin-bottom: 5px;
-        border-radius: 2px;
+        height: 100%;
     }
 
-    .input_mass ::placeholder{
-        padding-left: 10px;
-        color: #B3B3B3;
-    }
-
-    .input_mass #radio{
-        margin-left: -270px;
-        margin-top: 8px;
-        transform:scale(0.7);
-        accent-color: black;
-    }
-
-    .input_mass #transparent {
-        display: flex;
-        font-size: 12px;
-        position: absolute;
+    .input_mass h1 {
+        padding-bottom: 40px;
         font-family: "Noto Sans", sans-serif;
-        font-weight: 300;
-        color: #B3B3B3;
-        margin-left: 50px;
-        margin-top: 14px;
-    }
-
-    .input_mass h5 {
-        color: #fff;
-    }
-
-    .input_mass #town{
-        margin-top: 14px;
-    }
-
-    .input_mass button {
-        margin-top: 20px;
-        width: 235px;
-        height: 40px;
-        border-radius: 2px;
-        background-color: black;
-        color: white;
-        margin-bottom: 20%;
-        font-family: "Noto Sans", sans-serif;
-        font-size: 16px;
-        letter-spacing: 2px;
-        font-weight: bold;
-        cursor: pointer;
-        border: none;
-    }
-
-    .btn :hover {
-        /* box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19); */
-        background-color: #ffff;
-        font-size: 18px;
-        color: #000;
-        transition: 0.2s ease;
+        font-size: 40px;
+        font-weight: 500;
     }
     
 `
@@ -307,10 +206,11 @@ const Bag = () => {
     </OrderInfo>
     <OrderInput>
         <div className='input_mass'>
-            <p>Оформление заказа</p>
-            <h1>Адрес эл. почты</h1>
+
+            <h1>Оформление заказа</h1>
+            <p>Адрес эл. почты</p>
             <input id='long' type='email' placeholder="example@zmail.ucoz.ru"></input>
-            <h1>Страна</h1>
+            <p>Страна</p>
             <select className='country'>
                 <option>Казахстан</option>
                 <option selected>Россия</option>
@@ -318,38 +218,7 @@ const Bag = () => {
                 <option>Саратов</option>
                 <option>26 КАДР</option>
             </select>
-            <h1>ФИО (Укажаите полностью фамилию и имя) и Номер телефона</h1>
-            <input id='short' type='text' placeholder="Китайкин Данька Прототипович"></input>
-            <input id='shorter' type='text' placeholder="+79056666666"></input>
-            <h1 id='text_margin'>Способ доставки:</h1>
-                <div className='radio_decision'>
-                    <h3 id='transparent'>Доставка по Российской Федерации </h3>
-                        <input id='radio' type='radio'></input>
-                </div>
-                <div className='radio_decision'>
-                    <h3 id='transparent'>Доставка в Беларусь и Казахстан </h3>
-                        <input id='radio' type='radio'></input>
-                </div>
-                <div className='radio_decision'>
-                    <h3 id='transparent'>Доставка в другие страны (кроме Украины) </h3>
-                        <input id='radio' type='radio'></input>
-                </div>
-                <h1>Адрес</h1>
-                <input id='long' type='text' placeholder="ул. Приколюхина, д7"></input>
-                <h5>.</h5>
-                <input id='short' type='text' placeholder="Город"></input>
-                <input id='shorter' type='text' placeholder="Почтовый индекс"></input>
-            <select id='town'>
-                    <option>Саратов</option>
-                    <option selected>Москва</option>
-                    <option>Санкт-Солебург</option>
-                    <option>Пушкино(Чушкино)</option>
-                    <option>Говорово</option>
-            </select>
-            <div className='btn'>
-                <button>Оформить заказ</button>
-            </div>
-                
+
         </div>
     </OrderInput>
 </div>

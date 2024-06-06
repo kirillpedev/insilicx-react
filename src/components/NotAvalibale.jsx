@@ -16,15 +16,16 @@ const Main = styled.div`
         margin-bottom: 150px;
         width: 1200px;
     }
+
     .product p {
         font-family: "Noto Sans", sans-serif;
         font-size: 32px;
         font-weight: 300;
         
     }
+
     .product img {
         margin-right: 15%;
-
     }
 
     .product h2 {
@@ -56,14 +57,12 @@ const Main = styled.div`
         color: #000000;
         background-color: #ffffff;
         transition: 0.2s ease;
-        box-shadow: 0 9px 9px 1px rgba(0,0,0,0.24)
     }
     .info button:disabled, .button:hover:disabled {
         color: #000000;
         background-color: #ffffff;
         transition: 0.2s ease;
-        box-shadow: 0 9px 9px 1px rgba(0,0,0,0.24);
-         cursor: not-allowed;
+        cursor: not-allowed;
     }
   
 `
@@ -82,9 +81,6 @@ const Buttons = styled.div`
     }
 
     .decision :hover {
-
-
-        box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
         background-color: #000;
         color: #ffff;
         transition: 0.2s ease;
@@ -144,7 +140,7 @@ const ProductPageMain = () => {
                     <img src={project.screenshot} alt="" width="540" height="560"/>
                     <div className='info'>
                         <p>{project.title}</p>
-                        <h1>{project.cost}</h1>
+                        <h1>{project.cost} ₽</h1>
                         <Buttons>
                             <div className='decision'>
                                 <button disabled='disabled'>L</button>

@@ -63,7 +63,7 @@ const Main = () => {
             ))}
         </div>
 
-        </Span>
+    </Span>
   )
 }
 

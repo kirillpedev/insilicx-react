@@ -5,6 +5,7 @@ import { Form, useLoaderData } from "react-router-dom";
 import products from '../products';
 import Error404 from "../components/Error404";
 import NotAvalibale from "../components/NotAvalibale";
+
 const Main = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -56,13 +57,14 @@ const Main = styled.div`
         font-weight: bold;
         color: #ffff;
         background-color: #000;
+        border: 2px solid black;
+        cursor: pointer;
     }
 
     .button :hover {
         color: #000000;
         background-color: #ffffff;
         transition: 0.2s ease;
-        box-shadow: 0 9px 9px 1px rgba(0,0,0,0.24)
     }
   
 `
@@ -78,37 +80,26 @@ const Buttons = styled.div`
         font-weight: bold;
         color: #000;
         background-color: #ffff;
+        border: 2px solid black;
     }
-    .decision .decision__active {
-    max-width: 40px;
-    max-height: 40px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-family: "Noto Sans", sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #000;
-   } 
-    /* .decision :hover {
 
-
-        box-shadow: 0 6px 6px 0 rgba(0,0,0,0.24), 0 6px 5px 0 rgba(0,0,0,0.19);
+    .decision .decision__active 
+    {
+        max-width: 40px;
+        max-height: 40px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
         background-color: #000;
-        color: #ffff;
+    } 
+    
+    .decision :hover {
+        box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.4);
         transition: 0.2s ease;
-    } */
-    /* .decision :focus {
-        background-color: #000;
-        color: #ffff;
-   }
-   .decision :active {
-    background-color: #000;
-    color: #ffff;
-   }
-    */
-
-
+    }
 `
 
 const ProductPageMain = () => {
@@ -150,13 +141,13 @@ const ProductPageMain = () => {
         change1();
         const error = document.getElementById('error');
         error.style.display = 'block';
-        error.innerHTML = 'Ошибка: выберите один размер.'
+        error.innerHTML = 'Выберите один размер.'
     }
     else if(!activebtn || !activebtn1) {
         const error = document.getElementById('error');
         // console.log(error);
         error.style.display = 'none';
-        error.innerHTML = 'Ошибка: Выберите размер.'
+        error.innerHTML = 'Выберите размер.'
     }
 
     function select_l(e) {
@@ -230,7 +221,7 @@ const ProductPageMain = () => {
                             </div>
                         </Buttons>
                         <h1 id='error'>
-                            Ошибка: Выберите размер
+                            Выберите размер
                         </h1>
                         <div className='button'>
                             <button onClick={AddToCart} className='addCart'>{changecart}</button>

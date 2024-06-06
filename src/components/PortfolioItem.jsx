@@ -45,7 +45,7 @@ function PortfolioItem({ work }) {
                     height={300}
                 />
                 <h1>{work.title}
-                <h2>{work.cost}</h2>
+                <h2>{work.cost} ₽</h2>
                 </h1>
             </div>
         </Link>
