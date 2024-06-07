@@ -7,6 +7,7 @@ import Order from './pages/Order';
 import Bag from './components/Bag';
 import Products from './products';
 // import ProductPage from './pages/ProductPage';
+
 import ProductPage, {
   loader,
 } from "./pages/ProductPage";
