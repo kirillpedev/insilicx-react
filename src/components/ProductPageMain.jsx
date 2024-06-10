@@ -70,39 +70,63 @@ const Main = styled.div`
 `
 
 const Buttons = styled.div`
-    .decision button {
-        max-width: 40px;
-        max-height: 40px;
-        margin-right: 10px;
+    .decision {
+        height: 45px;
+        margin-top: 8px;
         margin-bottom: 10px;
-        font-family: "Noto Sans", sans-serif;
-        font-size: 20px;
-        font-weight: bold;
-        color: #000;
-        background-color: #ffff;
-        border: 2px solid black;
     }
 
-    .decision .decision__active 
-    {
-        max-width: 40px;
-        max-height: 40px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        font-family: "Noto Sans", sans-serif;
-        font-size: 20px;
-        font-weight: bold;
-        color: #fff;
-        background-color: #000;
-    } 
-    
-    .decision :hover {
-        box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.4);
-        transition: 0.2s ease;
+    input[name="size"] {
+        -webkit-appearance: none;
+        appearance: none;
+        position: absolute;
+        height: 45px;
+        width: 45px;
+        border: 3px solid black;
+        cursor: pointer;
+    }
+
+    input[id="x"]::before {
+        content: "L";
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        color: black;
+        font-size: 24px;
+        font-weight: 500;
+        left: 14px;
+        top: 7px;
+    }
+
+    input[id="xl"]::before {
+        content: "XL";
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        color: black;
+        font-size: 24px;
+        font-weight: 500;
+        left: 6px;
+        top: 7px;
+    }
+
+    input[name="size"]:checked {
+        color: white;
+        background-color: black;
+    }
+
+    input[name="size"]:checked::before {
+        color: white;
+    }
+
+    #xl {
+        margin-left: 55px;
     }
 `
 
 const ProductPageMain = () => {
+    
+    
     const { id } = useLoaderData();
     const project = products.find(product => product.id === id);
     if(!project) {
@@ -143,11 +167,11 @@ const ProductPageMain = () => {
         error.style.display = 'block';
         error.innerHTML = 'Выберите один размер.'
     }
+
     else if(!activebtn || !activebtn1) {
         const error = document.getElementById('error');
-        // console.log(error);
         error.style.display = 'none';
-        error.innerHTML = 'Выберите размер.'
+        error.innerHTML = 'Выберите размер.';
     }
 
     function select_l(e) {
@@ -158,7 +182,12 @@ const ProductPageMain = () => {
         e.preventDefault();
         change1();
     }
+
     function AddToCart(e) {
+
+        const form = document.getElementById("sizes"); //БАЗА БАЗА БАЗА БАЗА БАЗА
+        console.log(form.elements["size"].value); //ОСНОВА ОСНОВА ОСНОВА ОСНОВА
+
         e.preventDefault();
         if (activebtn && activebtn1) {
                     const error = document.getElementById('error');
@@ -199,13 +228,7 @@ const ProductPageMain = () => {
             // console.log(project)
         }
       }
-    // const handleClick = (event) => {
-    //     if (activebtn && activebtn1) {
-    //         const cor = document.getElementById('error');
-    //         console.log(cor)
-    //         cor.style.display = 'block';
-    //     } 
-    // };
+      
   return (
         <div className='main'>
             <Main>
@@ -216,9 +239,11 @@ const ProductPageMain = () => {
                         <h1>{project.cost} ₽</h1>
                         <Buttons>
                             <div className='decision'>
-                                <button id='button_l' onClick={select_l} className={changebtn}>L</button>
-                                <button id='button_xl' onClick={select_xl} className={changebtn1}>XL</button>
-                            </div>
+                                <form id="sizes">
+                                    <input id='x' type="radio" name="size" value="100" onClick={zalupa}/>
+                                    <input id='xl' type="radio" name="size" value="200"/>
+                                </form>
+                            </div> 
                         </Buttons>
                         <h1 id='error'>
                             Выберите размер
@@ -234,67 +259,4 @@ const ProductPageMain = () => {
     
   )
     }
-//}
-//{/* 
-// const ProductPageMain = () => {
-//     const location = useLocation();
-//   return (
-//         <div className='main'>
-//             <Main>
-//                 <div className='product'>
-//                     <img src={location.state.photo} alt="" width="540" height="560"/>
-//                     <div className='info'>
-//                         <p>{location.state.name}</p>
-//                         <h1>{location.state.cost}</h1>
-//                         <Buttons>
-//                             <div className='decision'>
-//                                 <button>L</button>
-//                                 <button>XL</button>
-//                             </div>
-//                         </Buttons>
-//                         <div className='button'>
-//                             <button>В корзину</button>
-//                         </div>
-//                         <h2>Гладкий плюш, оверсайз крой<br>
-//                         </br>Принт - машинная вышивка</h2>
-//                     </div>
-//                 </div>
-//             </Main>
-//         </div>
-    
-//   )
-// } */}
-// const ProductPageMain = () => {
-//     const { id } = useLoaderData();
-//     const project = products.find(product => product.id === id);
-//     return (
-//         <div className='main'>
-//             <Main>
-//                 <div className='product'>
-//                     <img
-//                         src={project.screenshot}
-//                         alt=''
-//                         width={540}
-//                         height={560}
-//                     />
-//                     <div className='info'></div>
-//                     <p>{project.title}</p>
-//                     <h1>{project.cost}</h1>
-//                     <Buttons>
-//                            <div className='decision'>
-//                                 <button>L</button>
-//                                 <button>XL</button>
-//                             </div>
-//                     </Buttons>
-//                     <div className='button'>
-//                             <button>В корзину</button>
-//                     </div>
-//                     <h2>Гладкий плюш, оверсайз крой<br>
-//                     </br>Принт - машинная вышивка</h2>
-//                 </div>
-//             </div>
-//         </Main>
-
-//     )
-// }
 export default ProductPageMain

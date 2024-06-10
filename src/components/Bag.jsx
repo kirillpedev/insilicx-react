@@ -353,13 +353,9 @@ const Bag = () => {
                     <h1>Товары</h1>
                     <h2>4 500 ₽</h2>
                 </div>
-                <div className='line_short'>
-                </div>
                 <div className='delivery'>
                     <h1>Доставка</h1>
                     <h2>700 ₽</h2>
-                </div>
-                <div className='line_short'>
                 </div>
                 <div className='total'>
                     <h3>Итого</h3>
