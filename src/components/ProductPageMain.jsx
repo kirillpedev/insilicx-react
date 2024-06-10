@@ -143,7 +143,6 @@ const ProductPageMain = () => {
             </div>  
         )
     }
-    const myRef = useRef(null);
     const [activebtn, passivebtn] = useState(true);
     const [activebtn1, passivebtn1] = useState(true);
     const [addCart, delCart] = useState(true);
@@ -174,26 +173,26 @@ const ProductPageMain = () => {
         error.innerHTML = 'Выберите размер.';
     }
 
-    function select_l(e) {
-        e.preventDefault();
-        change();
-    }
-    function select_xl(e) {
-        e.preventDefault();
-        change1();
-    }
-
+    // function select_l(e) {
+    //     e.preventDefault();
+    //     //change();
+    // }
+    // function select_xl(e) {
+    //     e.preventDefault();
+    //     //change1();
+    // }
+   
     function AddToCart(e) {
 
         const form = document.getElementById("sizes"); //БАЗА БАЗА БАЗА БАЗА БАЗА
-        console.log(form.elements["size"].value); //ОСНОВА ОСНОВА ОСНОВА ОСНОВА
+        console.log("Размер:",form.elements["size"].value); //ОСНОВА ОСНОВА ОСНОВА ОСНОВА
 
         e.preventDefault();
-        if (activebtn && activebtn1) {
-                    const error = document.getElementById('error');
-                    error.style.display = 'block';
-        } 
-        else if ((!activebtn || !activebtn1) && addCart) {
+        // if (activebtn && activebtn1) {
+        //             const error = document.getElementById('error');
+        //             error.style.display = 'block';
+        // } 
+        if ((activebtn || activebtn1) && addCart) {    //activebtn - старая проверка на кнопки, т.е когда были <button>
             // console.log('da, кнопка: ', addCart)
             changeCart();
             const round = document.getElementById('round'); 
@@ -210,7 +209,7 @@ const ProductPageMain = () => {
             // console.log(total)
             // console.log(project)
         }
-        else if ((!activebtn || !activebtn1) && !addCart) {
+        else if ((activebtn || activebtn1) && !addCart) {  
             changeCart();
             // console.log('da !addcart', addCart)
             const round = document.getElementById('round'); 
@@ -240,8 +239,8 @@ const ProductPageMain = () => {
                         <Buttons>
                             <div className='decision'>
                                 <form id="sizes">
-                                    <input id='x' type="radio" name="size" value="100" onClick={zalupa}/>
-                                    <input id='xl' type="radio" name="size" value="200"/>
+                                    <input id='x' type="radio" name="size" value="100" />
+                                    <input id='xl' type="radio" name="size" value="200" />
                                 </form>
                             </div> 
                         </Buttons>
