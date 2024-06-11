@@ -5,7 +5,6 @@ import { Form, useLoaderData } from "react-router-dom";
 import products from "../products";
 import Error404 from "../components/Error404";
 import NotAvailable from "../components/NotAvalibale";
-
 const Main = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -123,6 +122,7 @@ const Buttons = styled.div`
 `
 
 const ProductPageMain = () => {
+
   const { id } = useLoaderData();
   const project = products.find((product) => product.id === id);
   if (!project) {
