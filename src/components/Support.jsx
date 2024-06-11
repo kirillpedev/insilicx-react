@@ -77,11 +77,11 @@ const Message = styled.div`
 
 const Button = styled.div`
     .btn_pos{
-        position: fixed; /* Фиксированное положение */
+        position: fixed;
         display: grid;
         grid-row-gap: 25px;
-        right: 90px; /* Расстояние от правого края окна браузера */
-        top: 70%; /* Расстояние сверху */
+        right: 90px;
+        bottom: 30%;
     }
 
     #round {
@@ -120,7 +120,7 @@ const Button = styled.div`
 export default function Support() {
   return (
     <Button>
-        <Chat>
+        {/* <Chat>
             <div className='chat'>
                 <h1>Что случилось сын берёзы?</h1>
                 <Message>
@@ -131,7 +131,7 @@ export default function Support() {
                 </Message> 
                 <h3>Функция чата заблокирована.</h3>
             </div>
-        </Chat>
+        </Chat> */}
         <div className='btn_pos'>
             <div id='round'>
                 <h1 id='total_basket'>1</h1>

@@ -26,10 +26,8 @@ const Container = styled.div`
       text-decoration: none;
       color: black;
     }
-`
 
-const Menu = styled.div`
-  .menu {
+    .menu {
       display: flex;
       font-family: "Noto Sans", sans-serif;
       grid-gap: 30px;
@@ -38,33 +36,32 @@ const Menu = styled.div`
       justify-content: space-around;
       list-style-type: none;
       text-transform: uppercase;
-  }
+    }
 
-  .menu a {
+    .menu a {
       color: black;
       text-decoration: none;
       font-weight: 500;
       font-size: 15px;
-  }
+    }
 
-  .menu :hover {
+    /* .menu :hover {
       font-size: 16px;
       transition: 0.2s ease;
-  }   
+    }  */
 `
+
 const Header = () => {
   return (
     <Container>
       <div className='header_main'>
       <div className='header'>
         <h1><a href='/'>Insilicx inc.</a></h1>
-          <Menu>
-            <ul class="menu">
-                <li><a href='/'>Каталог</a></li>
-                <li><a href='/photos'>Фото</a></li>
-                <li><a href='/reviews'>Отзывы</a></li>
-            </ul>
-          </Menu>
+        <ul class="menu">
+            <li><a href='/'>Каталог</a></li>
+            <li><a href='/photos'>Фото</a></li>
+            <li><a href='/reviews'>Отзывы</a></li>
+        </ul>
       </div>
       <div>
           <hr></hr>

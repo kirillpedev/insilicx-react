@@ -111,12 +111,13 @@ const Buttons = styled.div`
     }
 
     input[name="size"]:checked {
-        color: white;
         background-color: black;
+        transition: 0.05s ease-out;
     }
 
     input[name="size"]:checked::before {
         color: white;
+        transition: 0.05s ease-out;
     }
 
     #xl {
@@ -184,8 +185,8 @@ const ProductPageMain = () => {
    
     function AddToCart(e) {
 
-        const form = document.getElementById("sizes"); //БАЗА БАЗА БАЗА БАЗА БАЗА
-        console.log("Размер:",form.elements["size"].value); //ОСНОВА ОСНОВА ОСНОВА ОСНОВА
+        const form = document.getElementById("sizes");
+        console.log("Размер:",form.elements["size"].value);
 
         e.preventDefault();
         // if (activebtn && activebtn1) {

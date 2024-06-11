@@ -20,7 +20,7 @@ const Span = styled.div`
     .span {
         padding: 0 270px 0 270px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
         justify-content: center;
         justify-items: center;   
         grid-gap: 50px;

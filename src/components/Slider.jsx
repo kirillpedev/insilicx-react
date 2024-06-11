@@ -31,7 +31,7 @@ const Photo = styled.div`
     }
 
     .slider h1 {
-        margin-top: 90px;
+        margin-top: 3%;
         margin-bottom: 60px;
         text-align: center;
         font-family: "Anonymous Pro", monospace;
