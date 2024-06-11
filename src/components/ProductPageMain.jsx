@@ -76,14 +76,14 @@ const Buttons = styled.div`
     input[name="size"] {
         -webkit-appearance: none;
         appearance: none;
-        /* position: absolute; */
+        position: absolute;
         height: 45px;
         width: 45px;
         border: 3px solid black;
         cursor: pointer;
     }
 
-    input[id="x"]::before {
+    input[id="l"]::before {
         content: "L";
         position: absolute;
         height: 30px;
@@ -91,8 +91,8 @@ const Buttons = styled.div`
         color: black;
         font-size: 24px;
         font-weight: 500;
-        left: 14px;
-        top: 7px;
+        left: 13px;
+        top: 6px;
     }
 
     input[id="xl"]::before {
@@ -103,8 +103,8 @@ const Buttons = styled.div`
         color: black;
         font-size: 24px;
         font-weight: 500;
-        left: 6px;
-        top: 7px;
+        left: 5px;
+        top: 6px;
     }
 
     input[name="size"]:checked {
@@ -177,22 +177,22 @@ const ProductPageMain = () => {
                 <label>
                   <input
                     type="radio"
+                    id="l"
                     name="size"
                     value="L"
                     checked={selectedSize === "L"}
                     onClick={() => handleSizeSelect("L")}
                   />
-                  L
                 </label>
                 <label>
                   <input
                     type="radio"
                     name="size"
+                    id="xl"
                     value="XL"
                     checked={selectedSize === "XL"}
                     onClick={() => handleSizeSelect("XL")}
                   />
-                  XL
                 </label>
               </div>
             </Buttons>

@@ -17,8 +17,10 @@ const Span = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     padding-bottom: 200px;
     
+    width: 100%;
+
     .span {
-        padding: 0 270px 0 270px;
+        padding: 0 10% 0 10%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
         justify-content: center;

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import no_photo from '/src/img/no_photo.svg'
-import judje from '/src/img/judje.png'
+import judje from '../img/Judje.png'
 
 const Grid = styled.div`
     .grid_cont {
