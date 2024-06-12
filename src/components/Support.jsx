@@ -80,8 +80,8 @@ const Button = styled.div`
         position: fixed;
         display: grid;
         grid-row-gap: 25px;
-        right: 90px;
-        bottom: 30%;
+        right: 5%;
+        bottom: 5%;
     }
 
     #round {

@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import no_photo from '/src/img/no_photo.svg'
-import judje from '/src/img/judje.png'
+import judje from '../img/Judje.png'
+import dibil from '../img/dibil.jpg'
 
 const Grid = styled.div`
     .grid_cont {
@@ -67,7 +68,9 @@ const Container = styled.div`
     .judje {
       border-radius: 50px;
     }
-
+    .dibil {
+      border-radius: 50px;
+    }
     .name_info h1 {
       padding-top: 4px;
       padding-left: 5px;
@@ -144,7 +147,7 @@ const Main_Reviews = () => {
                 <Container>
                     <div className='wrapper'>
                     <div className='name_info'>
-                        <img src={no_photo} alt="" width="45" height="45"/>
+                        <img  className='dibil' src={dibil} alt="" width="45" height="45"/>
                         <div className='text_info'>
                               <h1>Данька 4 в диаметре)</h1>
                               <h2>25 янв. 2024</h2>

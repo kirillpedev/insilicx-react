@@ -11,8 +11,7 @@ const Container = styled.div`
       align-self: center;
       margin-top: 15px;
       margin-bottom: 7px;
-      margin-left: 150px;
-      margin-right: 150px;
+      padding: 0 15% 0 15%;
       height: 50px;
     }
 
@@ -45,10 +44,26 @@ const Container = styled.div`
       font-size: 15px;
     }
 
-    /* .menu :hover {
-      font-size: 16px;
-      transition: 0.2s ease;
-    }  */
+    @media (max-width: 850px) {
+      .header {
+        display: block;
+      } 
+
+      .header h1 {
+        text-align: center;
+      }
+      .menu {
+        padding-left: 0;
+        font-size: 14px;
+        margin-top: 11px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      hr {
+        margin-top: 35px;
+      }
+    }
 `
 
 const Header = () => {
@@ -56,16 +71,14 @@ const Header = () => {
     <Container>
       <div className='header_main'>
       <div className='header'>
-        <h1><a href='/'>Insilicx inc.</a></h1>
+        <h1><a href='/'>Insilicx inc</a></h1>
         <ul class="menu">
             <li><a href='/'>Каталог</a></li>
             <li><a href='/photos'>Фото</a></li>
             <li><a href='/reviews'>Отзывы</a></li>
         </ul>
       </div>
-      <div>
-          <hr></hr>
-        </div>
+      <hr></hr>
     </div>
     </Container>
   )

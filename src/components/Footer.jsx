@@ -6,16 +6,16 @@ import youtubesvg from '../svg/youtube.svg'
 
 const FooterMain = styled.div`
     font-family: "Anonymous Pro", monospace;
-    height: 230px;
+    height: 100%;
     background-color: #0C0C0C;
     color: white;
-    padding-left: 250px;
-    padding-right: 250px;
+    padding: 0 15% 0 15%;
 
     .footer-container {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 4vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding-top: 3vh;
+        padding-bottom: 4vh;
     }
 
     .caption {
@@ -30,6 +30,8 @@ const FooterMain = styled.div`
 `
 
 const LogoLinks = styled.div`
+    margin-top: 20px;
+
     p {
         font-size: 20px;
         margin-top: 23px;
@@ -40,26 +42,44 @@ const LogoLinks = styled.div`
         margin-right: 12px;
         margin-top: 27px;
     }
+
+    @media (max-width: 874px) {
+      text-align: center;
+      margin-bottom: 35px;
+    }
 `
 
 const ShopNav = styled.div`
     font-size: 18px;
+    margin-top: 20px;
 
     p {
         line-height: 35px;
+    }
+
+    @media (max-width: 874px) {
+      text-align: center;
+      margin-bottom: 35px;
     }
 `
 
 const InfoNav = styled.div`
     font-size: 18px;
+    margin-top: 20px;
 
     p {
         line-height: 35px;
+    }
+
+    @media (max-width: 874px) {
+      text-align: center;
+      margin-bottom: 35px;
     }
 `
 
 const BuisnessNav = styled.div`
     font-size: 16px;
+    margin-top: 20px;
 
     p {
         font-size: 15px;
@@ -71,6 +91,11 @@ const BuisnessNav = styled.div`
     h3 {
         font-size: 20px;
         margin-top: 15px;
+    }
+
+    @media (max-width: 874px) {
+      text-align: center;
+      margin-bottom: 35px;
     }
 `
 
