@@ -2,7 +2,7 @@ import dress1 from "/src/img/dress1.png";
 import React, { useRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Form, useLoaderData } from "react-router-dom";
-import products from "../Products";
+import products from "../products";
 import Error404 from "../components/Error404";
 import NotAvailable from "../components/NotAvalibale";
 const Main = styled.div`
