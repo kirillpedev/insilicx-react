@@ -31,7 +31,7 @@ export default [
         screenshot: dress3,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
-        available: true,
+        available: false,
     },
     {
         id: '4',
@@ -40,7 +40,7 @@ export default [
         screenshot: dress4,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
-        available: false,
+        available: true,
     },
     {
         id: '5',
@@ -58,7 +58,7 @@ export default [
         screenshot: dress6,
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
         link: '#',
-        available: false,
+        available: true,
     },
     
 ];
