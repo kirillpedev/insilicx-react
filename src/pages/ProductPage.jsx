@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ProductPageMain from '../components/ProductPageMain'
 import Support from '../components/Support'
-import products from '../products'
+import products from '../Products'
 import { Form, useLoaderData } from "react-router-dom";
 
 

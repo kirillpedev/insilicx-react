@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import no_photo from '/src/img/no_photo.svg'
-import judje from '../img/Judje.png'
-
+import React from 'react';
+import styled from 'styled-components';
+import no_photo from '/src/img/no_photo.svg';
+import judje from '../img/Judje.png';
+import Reviews from "../Reviews";
 const Grid = styled.div`
     .grid_cont {
       display: grid;
@@ -64,7 +64,7 @@ const Container = styled.div`
       display: flex;
     }
 
-    .judje {
+    .photo {
       border-radius: 50px;
     }
     .name_info h1 {
@@ -96,6 +96,7 @@ const Container = styled.div`
 
 `
 
+
 const Main_Reviews = () => {
   return (
       <div className='main_cont'>
@@ -106,107 +107,24 @@ const Main_Reviews = () => {
         </Text>
         <Grid>
             <div className='grid_cont'>
+            {Reviews.map((Feedback) => (
                 <Container>
                     <div className='wrapper'>
                     <div className='name_info'>
-                        <img src={no_photo} alt="" width="45" height="45"/>
+                        <img className='photo' src={Feedback.photo} alt="" width="45" height="45"/>
                         <div className='text_info'>
-                              <h1>Петро Кирилл</h1>
-                              <h2>25 янв. 2024</h2>
+                              <h1>{Feedback.name}</h1>
+                              <h2>{Feedback.date}</h2>
                         </div>
-                        <a href=''>Перейти</a>
+                        <a href={Feedback.link}>Перейти</a>
                     </div>
                           <div className='comm'>
-                            <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
+                            <p>{Feedback.description}</p>
                           </div>
 
                     </div>
                 </Container>
-
-                <Container>
-                    <div id='margin' className='wrapper'>
-                    <div className='name_info'>
-                        <img src={no_photo} alt="" width="45" height="45"/>
-                        <div className='text_info'>
-                              <h1>Горбатый калоед</h1>
-                              <h2>25 янв. 2024</h2>
-                        </div>
-                        <a href=''>Перейти</a>
-                    </div>
-                          <div className='comm'>
-                            <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
-                          </div>
-
-                    </div>
-                </Container>
-
-                <Container>
-                    <div className='wrapper'>
-                    <div className='name_info'>
-                        <img src={no_photo} alt="" width="45" height="45"/>
-                        <div className='text_info'>
-                              <h1>Данька 4 в диаметре)</h1>
-                              <h2>25 янв. 2024</h2>
-                        </div>
-                        <a href=''>Перейти</a>
-                    </div>
-                          <div className='comm'>
-                            <p>Не налазит.</p>
-                          </div>
-
-                    </div>
-                </Container>
-
-                <Container>
-                    <div className='wrapper'>
-                    <div className='name_info'>
-                        <img className='judje' src={judje} alt="" width="45" height="45"/>
-                        <div className='text_info'>
-                              <h1>Judje123</h1>
-                              <h2>25 янв. 2024</h2>
-                        </div>
-                        <a href=''>Перейти</a>
-                    </div>
-                          <div className='comm'>
-                            <p>СВежее мясо))</p>
-                          </div>
-
-                    </div>
-                </Container>
-
-                <Container>
-                    <div id='margin1' className='wrapper'>
-                    <div className='name_info'>
-                        <img src={no_photo} alt="" width="45" height="45"/>
-                        <div className='text_info'>
-                              <h1>Suzuya Juzo</h1>
-                              <h2>25 янв. 2024</h2>
-                        </div>
-                        <a href=''>Перейти</a>
-                    </div>
-                          <div className='comm'>
-                            <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
-                          </div>
-
-                    </div>
-                </Container>
-
-                <Container>
-                    <div className='wrapper'>
-                    <div className='name_info'>
-                        <img src={no_photo} alt="" width="45" height="45"/>
-                        <div className='text_info'>
-                              <h1>Advokat666</h1>
-                              <h2>25 янв. 2024</h2>
-                        </div>
-                        <a href=''>Перейти</a>
-                    </div>
-                          <div className='comm'>
-                            <p>После покупки лонгклиффа chxse the sun винрейт на сфе больше 50%!!! Наконец! Советую работягам</p>
-                          </div>
-
-                    </div>
-                </Container>
+                            ))}
             </div>
         </Grid>
         
@@ -214,5 +132,124 @@ const Main_Reviews = () => {
 
   )
 }
+
+// const Main_Reviews = () => {
+//   return (
+//       <div className='main_cont'>
+//         <Text>
+//           <div className='upper_text'>
+//             <h1 >Последние отзывы</h1><h2>16 y.o 10k pts shadow frend)) енджоеров</h2>
+//           </div>
+//         </Text>
+//         <Grid>
+//             <div className='grid_cont'>
+//                 <Container>
+//                     <div className='wrapper'>
+//                     <div className='name_info'>
+//                         <img src={no_photo} alt="" width="45" height="45"/>
+//                         <div className='text_info'>
+//                               <h1>Петро Кирилл</h1>
+//                               <h2>25 янв. 2024</h2>
+//                         </div>
+//                         <a href=''>Перейти</a>
+//                     </div>
+//                           <div className='comm'>
+//                             <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
+//                           </div>
+
+//                     </div>
+//                 </Container>
+
+//                 <Container>
+//                     <div id='margin' className='wrapper'>
+//                     <div className='name_info'>
+//                         <img src={no_photo} alt="" width="45" height="45"/>
+//                         <div className='text_info'>
+//                               <h1>Горбатый калоед</h1>
+//                               <h2>25 янв. 2024</h2>
+//                         </div>
+//                         <a href=''>Перейти</a>
+//                     </div>
+//                           <div className='comm'>
+//                             <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
+//                           </div>
+
+//                     </div>
+//                 </Container>
+
+//                 <Container>
+//                     <div className='wrapper'>
+//                     <div className='name_info'>
+//                         <img src={no_photo} alt="" width="45" height="45"/>
+//                         <div className='text_info'>
+//                               <h1>Данька 4 в диаметре)</h1>
+//                               <h2>25 янв. 2024</h2>
+//                         </div>
+//                         <a href=''>Перейти</a>
+//                     </div>
+//                           <div className='comm'>
+//                             <p>Не налазит.</p>
+//                           </div>
+
+//                     </div>
+//                 </Container>
+
+//                 <Container>
+//                     <div className='wrapper'>
+//                     <div className='name_info'>
+//                         <img className='judje' src={judje} alt="" width="45" height="45"/>
+//                         <div className='text_info'>
+//                               <h1>Judje123</h1>
+//                               <h2>25 янв. 2024</h2>
+//                         </div>
+//                         <a href=''>Перейти</a>
+//                     </div>
+//                           <div className='comm'>
+//                             <p>СВежее мясо))</p>
+//                           </div>
+
+//                     </div>
+//                 </Container>
+
+//                 <Container>
+//                     <div id='margin1' className='wrapper'>
+//                     <div className='name_info'>
+//                         <img src={no_photo} alt="" width="45" height="45"/>
+//                         <div className='text_info'>
+//                               <h1>Suzuya Juzo</h1>
+//                               <h2>25 янв. 2024</h2>
+//                         </div>
+//                         <a href=''>Перейти</a>
+//                     </div>
+//                           <div className='comm'>
+//                             <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
+//                           </div>
+
+//                     </div>
+//                 </Container>
+
+//                 <Container>
+//                     <div className='wrapper'>
+//                     <div className='name_info'>
+//                         <img src={no_photo} alt="" width="45" height="45"/>
+//                         <div className='text_info'>
+//                               <h1>Advokat666</h1>
+//                               <h2>25 янв. 2024</h2>
+//                         </div>
+//                         <a href=''>Перейти</a>
+//                     </div>
+//                           <div className='comm'>
+//                             <p>После покупки лонгклиффа chxse the sun винрейт на сфе больше 50%!!! Наконец! Советую работягам</p>
+//                           </div>
+
+//                     </div>
+//                 </Container>
+//             </div>
+//         </Grid>
+        
+//       </div>
+
+//   )
+// }
 
 export default Main_Reviews
