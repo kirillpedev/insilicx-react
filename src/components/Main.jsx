@@ -10,28 +10,17 @@ import dress4 from '/src/img/dress4.png'
 import dress5 from '/src/img/dress5.png'
 import dress6 from '/src/img/dress6.png'
 import PortfolioItem from './PortfolioItem';
-import Products from '../Products';
+import Products from '../products';
 const TITLE = 'Каталог | Insilicx inc.';
 
 const Span = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     padding-bottom: 200px;
-    
     width: 100%;
-
-    .span {
-        padding: 0 10% 0 10%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
-        justify-content: center;
-        justify-items: center;   
-        grid-gap: 50px;
-    }
-    
     .content {
         margin-top: 40px;
         height: 330px;
-        width: 215;
+        width: 215px;
     }
     .content h1 {
         margin-top: 20px;
@@ -52,6 +41,15 @@ const Span = styled.div`
 
 `
 
+const Span_1 = styled.span`
+
+    padding: 0 10% 0 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+    justify-content: center;
+    justify-items: center;   
+    grid-gap: 50px;
+`
 const Main = () => {
     const navigate = useNavigate();
   return (
@@ -59,11 +57,11 @@ const Main = () => {
         <Helmet>
           <title>{ TITLE }</title>
         </Helmet>
-        <div className='span'>
+        <Span_1>
             {Products.map((product) => (
                 <PortfolioItem key={product.id} work={product} />
             ))}
-        </div>
+        </Span_1>
 
     </Span>
   )

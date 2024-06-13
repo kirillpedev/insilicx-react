@@ -14,75 +14,61 @@ const Main = styled.div`
         font-size: 20px;
         font-weight: 400;
     } */
-  .product {
+
+`;
+
+const Buttons = styled.div`
+
+`
+const Product = styled.div`
     display: flex;
     margin-left: auto;
     margin-right: auto;
     margin-top: 150px;
     margin-bottom: 150px;
     width: 1200px;
-  }
-  .product p {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 32px;
-    font-weight: 300;
-  }
-  .product img {
-    margin-right: 15%;
-  }
+`
 
-  .product h2 {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 20px;
-    font-weight: normal;
-    margin-top: 15px;
-  }
 
-  .info {
-    display: block;
-    font-family: "Noto Sans", sans-serif;
-    font-size: 20px;
-  }
-
-  .info button {
-    width: 323px;
-    height: 47px;
-    border-radius: 1px;
-    margin-top: 10px;
-    font-family: "Noto Sans", sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffff;
-    background-color: #000;
-    border: 2px solid black;
+const ProductImg = styled.img`
+ margin-right: 15%;
+`
+const ProductInfo = styled.div`
+  display: block;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+`
+const ProductInfoP = styled.p`
+  font-family: "Noto Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+`
+const ProductInfoH1 = styled.h1`
+  
+`
+const ProductInfoH2 = styled.h2`
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 15px;
+`
+const Decision = styled.div`
+  height: 45px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+`
+const Decision_Label = styled.label`
+  
+`
+const Decision_Input = styled.input`
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    border: 3px solid black;
     cursor: pointer;
-  }
-
-  .button :hover {
-    color: #000000;
-    background-color: #ffffff;
-    transition: 0.2s ease;
-  }
-`;
-
-const Buttons = styled.div`
-    .decision {
-        height: 45px;
-        margin-top: 8px;
-        margin-bottom: 10px;
-    }
-
-    input[name="size"] {
-        -webkit-appearance: none;
-        appearance: none;
-        position: absolute;
-        height: 45px;
-        width: 45px;
-        border: 3px solid black;
-        cursor: pointer;
-    }
-
-    input[id="l"]::before {
+    &[id="l"]::before {
         content: "L";
         position: absolute;
         height: 30px;
@@ -93,8 +79,7 @@ const Buttons = styled.div`
         left: 13px;
         top: 6px;
     }
-
-    input[id="xl"]::before {
+    &[id="xl"]::before {
         content: "XL";
         position: absolute;
         height: 30px;
@@ -106,21 +91,39 @@ const Buttons = styled.div`
         top: 6px;
     }
 
-    input[name="size"]:checked {
+    &[name="size"]:checked {
         background-color: black;
         transition: 0.05s ease-out;
     }
 
-    input[name="size"]:checked::before {
+    &[name="size"]:checked::before {
         color: white;
         transition: 0.05s ease-out;
     }
-
-    #xl {
+    &[id="xl"] {
         margin-left: 55px;
     }
+    
 `
+const Button = styled.button`
+    width: 323px;
+    height: 47px;
+    border-radius: 1px;
+    margin-top: 10px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffff;
+    background-color: #000;
+    border: 2px solid black;
+    cursor: pointer;
 
+  &:hover {
+    color: #000000;
+    background-color: #ffffff;
+    transition: 0.2s ease;
+  }
+`
 const ProductPageMain = () => {
 
   const { id } = useLoaderData();
@@ -162,20 +165,19 @@ const ProductPageMain = () => {
 
   // верстка возвращаетмся
   return (
-    <div className="main">
       <Main>
-        <div className="product">
+        <Product>
           {/* тут картинка товара */}
-          <img src={project.screenshot} alt="" width="540" height="560" />
-          <div className="info">
+          <ProductImg src={project.screenshot} alt="" width="540" height="560" />
+          <ProductInfo>
             {/* вывод цены и товара */}
-            <p>{project.title}</p>
-            <h1>{project.cost} ₽</h1>
+            <ProductInfoP>{project.title}</ProductInfoP>
+            <ProductInfoH1>{project.cost} ₽</ProductInfoH1>
             {/* снизу кнопки размера */}
             <Buttons>
-              <div className="decision">
-                <label>
-                  <input
+              <Decision>
+                <Decision_Label>
+                  <Decision_Input
                     type="radio"
                     id="l"
                     name="size"
@@ -183,9 +185,9 @@ const ProductPageMain = () => {
                     checked={selectedSize === "L"}
                     onClick={() => handleSizeSelect("L")}
                   />
-                </label>
-                <label>
-                  <input
+                </Decision_Label>
+                <Decision_Label>
+                  <Decision_Input
                     type="radio"
                     name="size"
                     id="xl"
@@ -193,23 +195,20 @@ const ProductPageMain = () => {
                     checked={selectedSize === "XL"}
                     onClick={() => handleSizeSelect("XL")}
                   />
-                </label>
-              </div>
+                </Decision_Label>
+              </Decision>
             </Buttons>
             {/* тут вывод сообщеня */}
-            <h1 id="message">{message}</h1>
+            <ProductInfoH1>{message}</ProductInfoH1>
             {/* тут кнопка корзины */}
-            <div className="button">
-              <button onClick={addToCart} className="addCart">
+            <Button onClick={addToCart} className="addCart">
                 Добавить в корзину
-              </button>
-            </div>
+            </Button>
             {/* тут описание товара */}
-            <h2>{project.description}</h2>
-          </div>
-        </div>
+            <ProductInfoH2>{project.description}</ProductInfoH2>
+          </ProductInfo>
+        </Product>
       </Main>
-    </div>
   );
 };
 
