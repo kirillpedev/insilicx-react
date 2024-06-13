@@ -8,42 +8,27 @@ import check from '../svg/check.svg'
 const Main = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-    * {
-        font-family: "Noto Sans", sans-serif;
-    }
+    font-family: "Noto Sans", sans-serif;
 
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-top: 3%;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3%;
 `
 
 const OrderInfo = styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-    .content {
-        padding: 0 270px 0 270px;
-        display: block;
-        justify-content: center;
-        justify-items: center;   
-        grid-gap: 50px;
-        width: 400px;
-    }
+    padding: 0 270px 0 270px;
+    display: block;
+    justify-content: center;
+    justify-items: center;   
+    grid-gap: 50px;
+    width: 400px;
 
     .content h1 {
         margin-bottom: 40px;
     }
 
     .close_img {
-        position: absolute;
-        margin-top: 6px;
-        right: 0;
-    }
-    
-    .order_main {
-        display: flex;
-        padding-bottom: 15px;
-        position: relative;
+        
     }
 
     .line hr {
@@ -79,18 +64,6 @@ const OrderInfo = styled.div`
         margin-top: 45px;
     }
 
-    .order_main p {
-        padding-left: 10px;
-        font-family: "Noto Sans", sans-serif;
-        font-size: 16px;
-        font-weight: 300;
-    }
-
-    .order_end h1 {
-        font-family: "Noto Sans", sans-serif;
-        font-size: 13px;
-        font-weight: 400;
-    }
 
     .order_end h2 {
         font-family: "Noto Sans", sans-serif;
@@ -108,14 +81,6 @@ const OrderInfo = styled.div`
         justify-content: space-between;
     }
 
-    .items h1 {
-        margin-bottom: 16px;
-    }
-
-    .delivery h1 {
-        margin-bottom: 16px;
-    }
-
     .delivery {
         display: flex;
         justify-content: space-between;
@@ -127,94 +92,142 @@ const OrderInfo = styled.div`
         display: flex;
         justify-content: space-between;
     }
+
     .total h2 {
         font-family: "Noto Sans", sans-serif;
         font-size: 24px;
         font-weight: 600;
     }
-
-    
 `
 
 
 const OrderInput = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-    .input_mass {
-        width: 700px;
-        height: 100%;
-    }
+    width: 700px;
+    height: 100%;
 
-    h1 {
-        margin-bottom: 10px;
+    div {
+        margin-top: 9px;
     }
+`
 
-    .input_mass p {
-        font-size: 14px; 
-        margin-bottom: 5px;
+const Headline = styled.h1`
+    padding-bottom: 40px;
+    font-family: "Noto Sans", sans-serif;
+`
+
+const Pg = styled.div`
+    font-size: 16px; 
+    margin-bottom: 5px;
+`
+const Select = styled.select`
+    width: 100%;
+    border: 1px solid #C5C5C5;
+    padding: 9px 0px 9px ;
+    text-indent: 15px; 
+`
+
+const InputLong = styled.input`
+    padding: 11px 0px 11px;
+    width: 100%; 
+    text-indent: 15px; 
+    border: 1px solid #C5C5C5;
+`
+
+const InputShort = styled.input`
+    padding: 11px 0px 11px ;
+    width: 100%; 
+    text-indent: 15px; 
+    border: 1px solid #C5C5C5;
+`
+
+//Пустотелые лохи
+const Option = styled.option`
+    
+`
+
+const SpanFirst = styled.span`
+    
+`
+const SelectInput = styled.div`
+
+`
+
+const UserInput = styled.div`
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+`
+
+const SpanSecond = styled.span`
+    padding-left: 15px;
+`
+
+const RadioDecision = styled.div`
+    width: 100%;
+    height: 48px;
+    position: relative;
+`
+
+const OrderButton = styled.button`
+    width: 323px;
+    height: 47px;
+    border-radius: 1px;
+    margin-top: 10px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffff;
+    background-color: #000;
+    border: 2px solid black;
+    cursor: pointer;
+
+    &:hover {
+        color: #000000;
+        background-color: #ffffff;
+        transition: 0.1s ease;
     }
+`
 
-    .country {
-        width: 100%;
-        border: 1px solid #C5C5C5;
-        padding: 7px 0px 7px ;
-        text-indent: 15px; 
-    }
+const LicenseInput = styled.div`
+    width: 100%;
+    height: 20px;
+    position: relative;
+`
 
-    .input_mass div {
-        margin-top: 14px;
-    }
+const RDLabel = styled.label`
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    left: 38px;
+    color: black;
+`
 
-    .input_mass #long {
-        padding: 9px 0px 9px;
-        width: 100%; 
-        text-indent: 15px; 
-        border: 1px solid #C5C5C5;
-    }
+const LILabel = styled.label`
+    position: absolute;
+    left: 30px;
+    top: -1px;
+`
 
-    .input_mass #short {
-        padding: 9px 0px 9px ;
-        width: 100%; 
-        text-indent: 15px; 
-        border: 1px solid #C5C5C5;
-    }
+const RDPg = styled.p`
+    cursor: pointer;
+    position: absolute;
+    font-weight: 600;
+    font-size: 15px;
+    top: 15px;
+    right: 10px;
+    color: black;
+`
 
-    .phone {
-        padding-left: 15px;
-    }
+const DeliveryInput = styled.input`
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #C5C5C5;
 
-    .index {
-        padding-left: 15px;
-    }
-
-    .input_mass h1 {
-        padding-bottom: 40px;
-        font-family: "Noto Sans", sans-serif;
-        font-size: 40px;
-        font-weight: 500;
-    }
-
-    .user_input {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-    }
-
-    .radio_decision {
-        width: 100%;
-        height: 48px;
-        position: relative;
-    }
-
-    input[name="delivery_type"] {
-        -webkit-appearance: none;
-        appearance: none;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        border: 1px solid #C5C5C5;
-    }
-
-    input[name="delivery_type"]::before {
+    &::before {
         content: "";
         position: absolute;
         height: 16px;
@@ -225,7 +238,7 @@ const OrderInput = styled.div`
         left: 10px;
     }
 
-    input[name="delivery_type"]::after {
+    &::after {
         content: "";
         position: absolute;
         background-color: transparent;
@@ -236,55 +249,25 @@ const OrderInput = styled.div`
         left: 14px;
     }
 
-    input[name="delivery_type"]:checked {
+    &:checked {
         border: 2px solid black;
     }
 
-    input[name="delivery_type"]:checked:after {
+    &:checked:after {
         background-color: black; 
     }
+`
 
-    .radio_decision label {
-        cursor: pointer;
-        position: absolute;
-        top: 13px;
-        left: 38px;
-        color: black;
-    }
+const LicInput = styled.input`
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    cursor: pointer;
 
-    .radio_decision p {
-        cursor: pointer;
-        position: absolute;
-        font-weight: 600;
-        font-size: 15px;
-        top: 15px;
-        right: 10px;
-        color: black;
-    }
-
-    .license_input {
-        width: 100%;
-        height: 20px;
-        position: relative;
-    }
-
-    .license_input label {
-        position: absolute;
-        left: 30px;
-        top: -1px;
-    }
-
-    input[name="license_type"] {
-        -webkit-appearance: none;
-        appearance: none;
-        position: absolute;
-        height: 20px;
-        width: 20px;
-        border: 1px solid black;
-        cursor: pointer;
-    }
-
-    input[name="license_type"]:checked {
+    &:checked {
         content: "";
         background: url(${check}) no-repeat;
         background-size: 19px 19px;
@@ -294,162 +277,179 @@ const OrderInput = styled.div`
         height: 20px;
         transition: 0.1s ease-in-out;
     }
-    
-    .button .order {
-        width: 323px;
-        height: 47px;
-        border-radius: 1px;
-        margin-top: 10px;
-        font-family: "Noto Sans", sans-serif;
-        font-size: 20px;
-        font-weight: bold;
-        color: #ffff;
-        background-color: #000;
-        border: 2px solid black;
-        cursor: pointer;
-    }
-
-    .button .order:hover {
-        color: #000000;
-        background-color: #ffffff;
-        transition: 0.1s ease;
-    }
-
 `
 
+//Начинается игар я открываю див смерти
+const OrderMain = styled.div`
+    display: flex;
+    padding-bottom: 15px;
+    position: relative;
+`
 
+const ItemImage = styled.img`
+    width: 86px;
+    height: 85px;
+`
+const CloseImage = styled.img`
+    position: absolute;
+    margin-top: 6px;
+    right: 0;
+`
 
+const ItemPg = styled.p`
+    padding-left: 10px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+`
+
+const HeadlineCoast = styled.h1`
+    margin-bottom: 16px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+`
+const CoastH2 = styled.h2`
+    font-family: "Noto Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+`
+
+const ItemCoast = styled.h2`
+    font-family: "Noto Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 45px;
+`
+
+const ItemSize = styled.h2`
+    font-family: "Noto Sans", sans-serif;
+    padding-top: 3px;
+    font-size: 12px;
+    font-weight: 300;
+`
+
+const ItemCount = styled.h3`
+    font-family: "Noto Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-top: 5px;
+`
+
+const Nekoe = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
+const Line = styled.hr`
+    width: 100%;
+    border: 1px solid #D6D6D6;
+    margin-bottom: 18px;
+`
 
 const Bag = () => {
   return (
     <Main>
-    <div className='grid'>
+
     <OrderInfo>
-        <div className='content'>
-            <h1>Корзина</h1>
-            <div className='order_main'>
-                <img src={dress1} alt="" width="86" height="85"/>
-                <p>Longsleeve “Slava nashim” black<h2>Размер: XL</h2><h3>x 1</h3></p>
-                <h4>4 500 ₽</h4>
-                <img className='close_img' src={close} alt="" width="10" height="10"/>  
-            </div>
-            <div className='order_main'>
-                <img src={dress1} alt="" width="86" height="85"/>
-                <p>Longsleeve “Slava nashim” black<h2>Размер: XL</h2><h3>x 1</h3></p>
-                <h4>4 500 ₽</h4>
-                <img className='close_img' src={close} alt="" width="10" height="10"/>  
-            </div>
-            <div className='order_main'>
-                <img src={dress1} alt="" width="86" height="85"/>
-                <p>Longsleeve “Slava nashim” black<h2>Размер: XL</h2><h3>x 1</h3></p>
-                <h4>4 500 ₽</h4>
-                <img className='close_img' src={close} alt="" width="10" height="10"/>  
-            </div>
-            <div className='line'>
-                    <hr></hr>
-                </div>
-            <div className='order_end'>
-                <div className='items'>
-                    <h1>Товары</h1>
-                    <h2>4 500 ₽</h2>
-                </div>
-                <div className='delivery'>
-                    <h1>Доставка</h1>
-                    <h2>700 ₽</h2>
-                </div>
-                <div className='total'>
-                    <h3>Итого</h3>
-                    <h2>14 200₽</h2>
-                </div> 
-            </div>
-        </div>
+            <Headline>Корзина</Headline>
+            <OrderMain>
+                <ItemImage src={dress1} alt=""/>
+                <ItemPg>Longsleeve “Slava nashim” black<ItemSize>Размер: XL</ItemSize><ItemCount>x 1</ItemCount></ItemPg>
+                <ItemCoast>4 500 ₽</ItemCoast>
+                <CloseImage className='close_img' src={close} alt="" width="10" height="10"/>  
+            </OrderMain>
+            <OrderMain>
+                <ItemImage src={dress1} alt=""/>
+                <ItemPg>Longsleeve “Slava nashim” black<ItemSize>Размер: XL</ItemSize><ItemCount>x 1</ItemCount></ItemPg>
+                <ItemCoast>4 500 ₽</ItemCoast>
+                <CloseImage className='close_img' src={close} alt="" width="10" height="10"/>  
+            </OrderMain>
+            <OrderMain>
+                <ItemImage src={dress1} alt=""/>
+                <ItemPg>Longsleeve “Slava nashim” black<ItemSize>Размер: XL</ItemSize><ItemCount>x 1</ItemCount></ItemPg>
+                <ItemCoast>4 500 ₽</ItemCoast>
+                <CloseImage className='close_img' src={close} alt="" width="10" height="10"/>  
+            </OrderMain>
+            <Line/>
+            <Nekoe>
+                <HeadlineCoast>Товары</HeadlineCoast>
+                <HeadlineCoast>4 500 ₽</HeadlineCoast>
+            </Nekoe>
+            <Nekoe>
+                <HeadlineCoast>Доставка</HeadlineCoast>
+                <HeadlineCoast>700 ₽</HeadlineCoast>
+            </Nekoe>
+            <Nekoe>
+                <CoastH2>Итого</CoastH2>
+                <CoastH2>14 200₽</CoastH2>
+            </Nekoe> 
     </OrderInfo>
+
     <OrderInput>
-        <h1>Оформление заказа</h1>
-        <div className='input_mass'>
-
-            <div className='email_input'>
-                <p>Адрес эл. почты</p>
-                <input id='long' type='email' placeholder="example@zmail.ucoz.ru"></input>
-            </div>
-
-            <div className='country_input'>
-                <p>Страна</p>
-                <select className='country'>
-                    <option>Казахстан</option>
-                    <option selected>Россия</option>
-                    <option>Турникестан</option>
-                    <option>Саратов</option>
-                    <option>26 КАДР</option>
-                </select>
-            </div>
-            
-            <div className='user_input'>
-                <span className='name'>
-                    <p>ФИО (Укажите полностью фамилию и имя)</p>
-                    <input id='long' type='email' placeholder="Прототипов Данька Ведьмакович"></input>
-                </span>
-                <span className='phone'>
-                    <p>Номер</p>
-                    <input id='short' type='email' placeholder="+79053336677"></input>
-                </span>
-            </div>
-
-            <div className='delivery_input'>
-                <p>Способ доставки:</p>
-                <div for="d_rus" className='radio_decision'>
-                    <input id="d_rus" type="radio" name="delivery_type"/>
-                    <label for="d_rus">Доставка по Российской Федерации</label>
-                    <p>400 ₽</p>
-                </div>
-                <div className='radio_decision'>
-                    <input id="d_cis" type="radio" name="delivery_type"/>
-                    <label for="d_cis">Доставка в Беларусь и Казахстан</label>
-                    <p>700 ₽</p>
-                </div>
-                <div className='radio_decision'>
-                    <input id="d_world" type="radio" name="delivery_type"/>
-                    <label for="d_world">Доставка в другие страны (кроме Украины)</label>
-                    <p>от 1700 ₽</p>
-                </div>
-            </div>
-
-            <div className='email_input'>
-                <p>Адрес</p>
-                <input id='long' type='email' placeholder="ул. Приколюхина, д7"></input>
-            </div>
-
-            <div className='user_input'>
-                <span className='city'>
-                    <input id='long' type='email' placeholder="Город"></input>
-                </span>
-                <span className='index'>
-                    <input id='short' type='email' placeholder="Почтовый индекс"></input>
-                </span>
-            </div>
-
-            <div className='country_input'>
-                <select className='country'>
-                    <option>Москва</option>
-                    <option selected>Московская обл.</option>
-                    <option>Саратовская обл.</option>
-                    <option>26-кадровская обл.</option>
-                    <option>Турникистанский край</option>
-                </select>
-            </div>
-
-            <div className='license_input'>
-                <input id="lic" type="checkbox" name="license_type"/>
-                <label for="lic">Согласен с <a href='#'>публичной офертой</a></label>
-            </div>
-
-            <div className='button'>
-                <button className='order'>Скачать вирус</button>
-            </div>
-
-        </div>
+        <Headline>Оформление заказа</Headline>
+            <Pg>Адрес эл. почты</Pg>
+            <InputLong type='email' placeholder="example@zmail.ucoz.ru"></InputLong>
+            <Pg>Страна</Pg>
+            <Select>
+                <Option>Казахстан</Option>
+                <Option selected>Россия</Option>
+                <Option>Турникестан</Option>
+                <Option>Саратов</Option>
+                <Option>26 КАДР</Option>
+            </Select>
+            <UserInput>
+                <SpanFirst>
+                    <Pg>ФИО (Укажите полностью фамилию и имя)</Pg>
+                    <InputLong type='email' placeholder="Прототипов Данька Ведьмакович"></InputLong>
+                </SpanFirst>
+                <SpanSecond>
+                    <Pg>Номер</Pg>
+                    <InputShort type='email' placeholder="+79053336677"></InputShort>
+                </SpanSecond>
+            </UserInput>
+            <Pg>Способ доставки:</Pg>
+            <RadioDecision>
+                <DeliveryInput id="d_rus" type="radio" name="delivery_type"/>
+                <RDLabel for="d_rus">Доставка по Российской Федерации</RDLabel>
+                <RDPg>400 ₽</RDPg>
+            </RadioDecision>
+            <RadioDecision>
+                <DeliveryInput id="d_cis" type="radio" name="delivery_type"/>
+                <RDLabel for="d_cis">Доставка в Беларусь и Казахстан</RDLabel>
+                <RDPg>700 ₽</RDPg>
+            </RadioDecision>
+            <RadioDecision>
+                <DeliveryInput id="d_world" type="radio" name="delivery_type"/>
+                <RDLabel for="d_world">Доставка в другие страны (кроме Украины)</RDLabel>
+                <RDPg>от 1700 ₽</RDPg>
+            </RadioDecision>
+            <Pg>Адрес</Pg>
+            <InputLong type='email' placeholder="ул. Приколюхина, д7"></InputLong>
+            <UserInput>
+                <SpanFirst>
+                    <InputLong type='email' placeholder="Город"></InputLong>
+                </SpanFirst>
+                <SpanSecond>
+                    <InputShort type='email' placeholder="Почтовый индекс"></InputShort>
+                </SpanSecond>
+            </UserInput>
+            <SelectInput>
+                <Select>
+                    <Option>Москва</Option>
+                    <Option selected>Московская обл.</Option>
+                    <Option>Саратовская обл.</Option>
+                    <Option>26-кадровская обл.</Option>
+                    <Option>Турникистанский край</Option>
+             </Select>
+            </SelectInput>
+            <LicenseInput>
+                <LicInput id="lic" type="checkbox" name="license_type"/>
+                <LILabel for="lic">Согласен с <a href='#'>публичной офертой</a></LILabel>
+            </LicenseInput>
+            <OrderButton>Скачать вирус</OrderButton>
     </OrderInput>
-</div>
+
 </Main>
   )
 }

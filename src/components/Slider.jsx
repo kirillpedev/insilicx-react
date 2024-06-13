@@ -19,47 +19,42 @@ import styled from 'styled-components'
 
 const Photo = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-    .slider {
-        min-width: 1325px;
-        min-height: 560px;
-        text-align: center;
-        margin-right: 20%;
-        margin-left: 15%;
-        margin-bottom: 8%;
-        margin-top: 50px;
-    }
-
-    .slider h1 {
-        margin-top: 3%;
-        margin-bottom: 60px;
-        text-align: center;
-        font-family: "Anonymous Pro", monospace;
-        font-size: 48px;
-        font-weight: 700;
-    }
-    .slider h2 {
-        text-align: center;
-        font-family: "Anonymous Pro", monospace;
-        font-size: 20px;
-        font-weight: 500;
-    }
-
-    .slider img {
-      border-radius: 10px;
-      box-shadow: #5e5e5e63 6px 5px 20px ;
-      margin-bottom: 30px;
-      
-    }
+  min-width: 1325px;
+  min-height: 560px;
+  text-align: center;
+  margin-right: 20%;
+  margin-left: 15%;
+  margin-bottom: 8%;
+  margin-top: 50px;
 `
 
+const Headline = styled.h1`
+  margin-top: 3%;
+  margin-bottom: 60px;
+  text-align: center;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 48px;
+  font-weight: 700;
+`
+
+const SecondaryText = styled.h2`
+  text-align: center;
+  font-family: "Anonymous Pro", monospace;
+  font-size: 20px;
+  font-weight: 500;
+`
+
+const Avatar = styled.img`
+  border-radius: 10px;
+  box-shadow: #5e5e5e63 6px 5px 20px ;
+  margin-bottom: 30px;
+`
 
 
 const Slider = () => {
   return (
     <Photo>
-        <div className='slider'>
-        <h1>Примеры TripleS лука<h2>если ты 15 y.o 2k pts arc warden енджоер</h2></h1>
+        <Headline>Примеры TripleS лука<SecondaryText>если ты 15 y.o 2k pts arc warden енджоер</SecondaryText></Headline>
             <Swiper
             autoplay={{
               delay: 2000,
@@ -83,22 +78,21 @@ const Slider = () => {
             className="mySwiper"
             >
                 <SwiperSlide>
-                <img src={slide_1} alt="" width= '535px' height= '535px' />
+                <Avatar src={slide_1} alt="" width= '535px' height= '535px' />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide_1} alt="" width= '535px' height= '535px' />
+                <Avatar src={slide_1} alt="" width= '535px' height= '535px' />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide_1} alt="" width= '535px' height= '535px' />
+                <Avatar src={slide_1} alt="" width= '535px' height= '535px' />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide_2} alt="" width= '535px' height= '535px' />
+                <Avatar src={slide_2} alt="" width= '535px' height= '535px' />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={slide_3} alt="" width= '535px' height= '535px' />
+                <Avatar src={slide_3} alt="" width= '535px' height= '535px' />
             </SwiperSlide>
             </Swiper>
-        </div>
     </Photo>
   )
 }

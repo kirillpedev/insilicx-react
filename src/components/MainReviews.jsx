@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import no_photo from '/src/img/no_photo.svg';
 import judje from '../img/Judje.png';
 import Reviews from "../Reviews";
+
 const Grid = styled.div`
     .grid_cont {
       display: grid;
       grid-template-columns: 455px 455px 1fr;
-      /* margin-left: 16%; */
       margin-left: auto;
       margin-right: auto; 
       width: 82em;
@@ -35,6 +35,7 @@ const Text = styled.div`
     font-weight: 400;
   }
 `
+
 
 const Container = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -102,7 +103,7 @@ const Main_Reviews = () => {
       <div className='main_cont'>
         <Text>
           <div className='upper_text'>
-            <h1 >Последние отзывы</h1><h2>16 y.o 10k pts shadow frend)) енджоеров</h2>
+            <h1>Последние отзывы</h1><h2>16 y.o 10k pts shadow frend)) енджоеров</h2>
           </div>
         </Text>
         <Grid>
@@ -119,9 +120,8 @@ const Main_Reviews = () => {
                         <a href={Feedback.link}>Перейти</a>
                     </div>
                           <div className='comm'>
-                            <p>{Feedback.description}</p>
+                              <p>{Feedback.description}</p>
                           </div>
-
                     </div>
                 </Container>
                             ))}
