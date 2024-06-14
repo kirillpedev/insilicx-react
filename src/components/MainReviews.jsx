@@ -4,26 +4,16 @@ import no_photo from '/src/img/no_photo.svg';
 import judje from '../img/Judje.png';
 import Reviews from "../Reviews";
 
-const Grid = styled.div`
-    /* .grid_cont {
-      display: grid;
-      grid-template-columns: 455px 455px 1fr;
-      margin-left: auto;
-      margin-right: auto; 
-      width: 82em;
-      margin-bottom: 220px;
-      margin-top: 50px;
-  //  } */
-`
+
 const Grid_cont = styled.div`
-   display: grid;
-      grid-template-columns: 455px 455px 1fr;
-      /* margin-left: 16%; */
-      margin-left: auto;
-      margin-right: auto; 
-      width: 82em;
-      margin-bottom: 220px;
-      margin-top: 50px;
+  padding: 0 5% 0 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
+  justify-content: center;
+  justify-items: center;   
+  grid-gap: 50px;
+  margin-bottom: 220px;
+  margin-top: 65px;
 `
 
 const Text = styled.div`
@@ -49,16 +39,25 @@ const Upper_TextH1 = styled.h1`
     font-family: "Anonymous Pro", monospace;
     font-size: 48px;
     font-weight: 700;
+
+    @media (max-width: 850px) {
+      margin-top: 2%;
+      font-size: 36px;
+    }
 `
 const Upper_TextH2 = styled.h2`
-margin-top: 10px;
+    margin-top: 10px;
     text-align: center;
     font-family: "Anonymous Pro", monospace;
     font-size: 20px;
     font-weight: 400;
+
+    @media (max-width: 850px) {
+      margin-top: 8px;
+      font-size: 16px;
+    }
 `
 const Wrapper = styled.div`
-   margin-top: 8%;
       padding-top: 12px;
       padding-left: 12px;
       width: 385px;
@@ -117,7 +116,6 @@ const Main_Reviews = () => {
             <Upper_TextH1>Последние отзывы</Upper_TextH1><Upper_TextH2>16 y.o 10k pts shadow frend)) енджоеров</Upper_TextH2>
           </Upper_Text>
         </Text>
-        <Grid>
           <Grid_cont>
             {Reviews.map((Feedback) => (
                 <Container>
@@ -138,7 +136,6 @@ const Main_Reviews = () => {
                 </Container>
               ))}
            </Grid_cont>
-        </Grid>
       </Main_Cont>
 
   )

@@ -10,7 +10,7 @@ import dress4 from '/src/img/dress4.png'
 import dress5 from '/src/img/dress5.png'
 import dress6 from '/src/img/dress6.png'
 import PortfolioItem from './PortfolioItem';
-import Products from '../products';
+import Products from '../Products';
 const TITLE = 'Каталог | Insilicx inc.';
 
 const Span = styled.div`
@@ -42,7 +42,6 @@ const Span = styled.div`
 `
 
 const Span_1 = styled.span`
-
     padding: 0 10% 0 10%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 350px));

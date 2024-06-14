@@ -206,7 +206,7 @@ const RDLabel = styled.label`
 const LILabel = styled.label`
     position: absolute;
     left: 30px;
-    top: -1px;
+    top: 1px;
 `
 
 const RDPg = styled.p`
