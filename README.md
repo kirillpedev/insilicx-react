@@ -2,14 +2,6 @@
 <h1 align="center">Insilicx inc.</h1>
 <h1>Интернет магазин фирменной одежды написанный на фреймворке React</h1>
 
-<p align="center">
-  <a href name="key-features">Ключевые функции</a> •
-  <a href name="download">Установка</a> •
-  <a href name="credits">Участники</a> •
-  <a href name="license">Лицензия</a> •
-   <a href="https://insilicx.ru/">Демо</a> 
-</p>
-
 ![screenshot](https://insilicx.ru/cdn/demo.png)
 
 ## Ключевые функции
@@ -21,7 +13,6 @@
 * **Работающая карусель**
 
 ## Установка
-[Установка](#download)
 Чтобы клонировать и запустить это приложение, вам понадобятся [Git](https://git-scm.com) и [Node.js](https://nodejs.org/en/download/)  (которые загружаются с npm), установленные на вашем компьютере. В командной строке:
 ```bash
 # Склонируйте этот репозиторий
