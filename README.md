@@ -3,10 +3,10 @@
 <h1>Интернет магазин фирменной одежды написанный на фреймворке React</h1>
 
 <p align="center">
-  <a href="#key-features">Ключевые функции</a> •
-  <a href="#download">Установка</a> •
-  <a href="#credits">Участники</a> •
-  <a href="#license">Лицензия</a> •
+  <a name="#key-features">Ключевые функции</a> •
+  <a name="#download">Установка</a> •
+  <a name="#credits">Участники</a> •
+  <a name="#license">Лицензия</a> •
    <a href="https://insilicx.ru/">Демо</a> 
 </p>
 
