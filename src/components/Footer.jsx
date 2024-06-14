@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import vksvg from '../svg/vk.svg'
 import telegramsvg from '../svg/telegram.svg'
 import youtubesvg from '../svg/youtube.svg'
-
+import {Animated} from "react-animated-css";
 const FooterMain = styled.div`
     font-family: "Anonymous Pro", monospace;
     height: 100%;
@@ -104,6 +104,7 @@ const BuisnessNavH3 = styled.h3`
 `
 const Footer = () => {
   return (
+    <Animated animationIn="fadeInDown"  animationInDuration='900' isVisible={true}>
     <FooterMain>
       <Footer_container>
             <LogoLinks>
@@ -134,6 +135,7 @@ const Footer = () => {
             </BuisnessNav>            
         </Footer_container>
     </FooterMain>
+    </Animated>
   )
 }
 

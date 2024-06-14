@@ -52,7 +52,7 @@ export default function Support() {
   return (
     <Button>
         <Round id='round'>
-            <Total id='total_basket'>1</Total>
+            <Total id='total_basket'>0</Total>
         </Round>
 
         <ActionForm action='/basket'>    

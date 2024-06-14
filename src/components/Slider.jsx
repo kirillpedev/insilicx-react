@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css/effect-creative';
-
+import {Animated} from 'react-animated-css'
 // import required modules
 import { EffectCreative } from 'swiper/modules';
 import 'swiper/css';
@@ -54,6 +54,7 @@ const Avatar = styled.img`
 const Slider = () => {
   return (
     <Photo>
+       <Animated animationIn="fadeIn" animationInDuration='1000' isVisible={true}>
         <Headline>Примеры TripleS лука<SecondaryText>если ты 15 y.o 2k pts arc warden енджоер</SecondaryText></Headline>
             <Swiper
             autoplay={{
@@ -93,6 +94,7 @@ const Slider = () => {
                 <Avatar src={slide_3} alt="" width= '535px' height= '535px' />
             </SwiperSlide>
             </Swiper>
+            </Animated>
     </Photo>
   )
 }

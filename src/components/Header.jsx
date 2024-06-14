@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import {Animated} from "react-animated-css";
 const Container = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -76,6 +76,7 @@ const Hr = styled.hr`
 const Header = () => {
   return (
     <Container>
+      <Animated animationIn="fadeInUp" animationInDuration='900'   isVisible={true}>
       <HeaderMain>
         <Headline><HeadlineLink href='/'>Insilicx inc</HeadlineLink></Headline>
         <Menu class="menu">
@@ -85,6 +86,7 @@ const Header = () => {
         </Menu>
       </HeaderMain>
       <Hr/>
+    </Animated>
     </Container>
   )
 }

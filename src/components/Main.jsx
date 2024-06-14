@@ -10,6 +10,7 @@ import dress4 from '/src/img/dress4.png'
 import dress5 from '/src/img/dress5.png'
 import dress6 from '/src/img/dress6.png'
 import PortfolioItem from './PortfolioItem';
+import {Animated} from 'react-animated-css'
 import Products from '../products';
 const TITLE = 'Каталог | Insilicx inc.';
 
@@ -50,9 +51,11 @@ const Span_1 = styled.span`
     justify-items: center;   
     grid-gap: 50px;
 `
+
 const Main = () => {
     const navigate = useNavigate();
   return (
+    <Animated animationIn="fadeIn" animationInDelay='600' animationInDuration='600' isVisible={true}>
     <Span>
         <Helmet>
           <title>{ TITLE }</title>
@@ -62,8 +65,8 @@ const Main = () => {
                 <PortfolioItem key={product.id} work={product} />
             ))}
         </Span_1>
-
     </Span>
+    </Animated>
   )
 }
 

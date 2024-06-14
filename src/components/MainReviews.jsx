@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import no_photo from '/src/img/no_photo.svg';
 import judje from '../img/Judje.png';
 import Reviews from "../Reviews";
-
+import {Animated} from 'react-animated-css'
 const Grid = styled.div`
     /* .grid_cont {
       display: grid;
@@ -112,6 +112,7 @@ const CommP = styled.p`
 const Main_Reviews = () => {
   return (
       <Main_Cont>
+        <Animated animationIn="fadeIn" animationInDuration='1000' isVisible={true}>
         <Text>
           <Upper_Text>
             <Upper_TextH1>Последние отзывы</Upper_TextH1><Upper_TextH2>16 y.o 10k pts shadow frend)) енджоеров</Upper_TextH2>
@@ -139,6 +140,7 @@ const Main_Reviews = () => {
               ))}
            </Grid_cont>
         </Grid>
+        </Animated>
       </Main_Cont>
 
   )

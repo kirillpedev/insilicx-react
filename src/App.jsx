@@ -36,12 +36,8 @@ const router = createBrowserRouter([
     element: <SliderPage />
   },
   {
-    path: "order",
-    element: <Order />
-  },
-  {
     path: "basket",
-    element: <Bag />
+    element: <Order />
   }
   
 ])

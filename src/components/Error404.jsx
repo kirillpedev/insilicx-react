@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useRouteError } from "react-router-dom";
-
+import {Animated} from "react-animated-css";
 
 const Main = styled.div`
   margin-bottom: 5%;
@@ -68,6 +68,7 @@ export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);
   return (
+    <Animated animationIn="fadeIn" animationInDelay='600' animationInDuration='1000' isVisible={true}>
     <Main>
         <Text>404</Text>
         <Text2>страница не найдена</Text2>
@@ -78,6 +79,7 @@ export default function ErrorPage() {
             </Form>
         </Button>
     </Main>
+    </Animated>
   )
 }
 
