@@ -4,6 +4,7 @@ import shoppingbag from '../svg/shopping-bag.svg'
 import headsetsvg from '../svg/headset.svg'
 
 const Button = styled.div`
+    z-index: 1;
     position: fixed;
     display: grid;
     grid-row-gap: 25px;

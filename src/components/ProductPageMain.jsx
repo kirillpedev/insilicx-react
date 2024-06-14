@@ -8,14 +8,6 @@ import NotAvailable from "../components/NotAvalibale";
 import {Animated} from "react-animated-css";
 const Main = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
-  /* .product .info #error {
-        display: none;
-        color: red;
-        font-size: 20px;
-        font-weight: 400;
-    } */
-
 `;
 
 const Buttons = styled.div`
@@ -174,7 +166,9 @@ const ProductPageMain = () => {
           <ProductInfo>
             {/* вывод цены и товара */}
             <ProductInfoP>{project.title}</ProductInfoP>
-            <ProductInfoH1>{project.cost} ₽</ProductInfoH1>
+            <Animated animationIn="shake" animationInDuration='1500' animationInDelay='700' isVisible={true}>
+              <ProductInfoH1>{project.cost} ₽</ProductInfoH1>
+            </Animated>
             {/* снизу кнопки размера */}
             <Buttons>
               <Decision>

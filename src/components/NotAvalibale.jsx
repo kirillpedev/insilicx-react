@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components'
 import { Form, useLoaderData } from "react-router-dom";
-import products from '../Products';
+import products from '../products';
 
 const Product = styled.div`
         display: flex;

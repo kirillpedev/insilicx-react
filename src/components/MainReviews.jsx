@@ -1,29 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import no_photo from '/src/img/no_photo.svg';
-import judje from '../img/Judje.png';
 import Reviews from "../Reviews";
 import {Animated} from 'react-animated-css'
-const Grid = styled.div`
-    /* .grid_cont {
-      display: grid;
-      grid-template-columns: 455px 455px 1fr;
-      margin-left: auto;
-      margin-right: auto; 
-      width: 82em;
-      margin-bottom: 220px;
-      margin-top: 50px;
-  //  } */
-`
+
+
 const Grid_cont = styled.div`
-   display: grid;
-      grid-template-columns: 455px 455px 1fr;
-      /* margin-left: 16%; */
-      margin-left: auto;
-      margin-right: auto; 
-      width: 82em;
-      margin-bottom: 220px;
-      margin-top: 50px;
+  padding: 0 5% 0 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
+  justify-content: center;
+  justify-items: center;   
+  grid-gap: 50px;
+  margin-bottom: 220px;
+  margin-top: 65px;
 `
 
 const Text = styled.div`
@@ -49,16 +38,25 @@ const Upper_TextH1 = styled.h1`
     font-family: "Anonymous Pro", monospace;
     font-size: 48px;
     font-weight: 700;
+
+    @media (max-width: 850px) {
+      margin-top: 2%;
+      font-size: 36px;
+    }
 `
 const Upper_TextH2 = styled.h2`
-margin-top: 10px;
+    margin-top: 10px;
     text-align: center;
     font-family: "Anonymous Pro", monospace;
     font-size: 20px;
     font-weight: 400;
+
+    @media (max-width: 850px) {
+      margin-top: 8px;
+      font-size: 16px;
+    }
 `
 const Wrapper = styled.div`
-   margin-top: 8%;
       padding-top: 12px;
       padding-left: 12px;
       width: 385px;
@@ -118,7 +116,6 @@ const Main_Reviews = () => {
             <Upper_TextH1>Последние отзывы</Upper_TextH1><Upper_TextH2>16 y.o 10k pts shadow frend)) енджоеров</Upper_TextH2>
           </Upper_Text>
         </Text>
-        <Grid>
           <Grid_cont>
             {Reviews.map((Feedback) => (
                 <Container>
@@ -139,130 +136,10 @@ const Main_Reviews = () => {
                 </Container>
               ))}
            </Grid_cont>
-        </Grid>
         </Animated>
       </Main_Cont>
 
   )
 }
-
-// const Main_Reviews = () => {
-//   return (
-//       <div className='main_cont'>
-//         <Text>
-//           <div className='upper_text'>
-//             <h1 >Последние отзывы</h1><h2>16 y.o 10k pts shadow frend)) енджоеров</h2>
-//           </div>
-//         </Text>
-//         <Grid>
-//             <div className='grid_cont'>
-//                 <Container>
-//                     <div className='wrapper'>
-//                     <div className='name_info'>
-//                         <img src={no_photo} alt="" width="45" height="45"/>
-//                         <div className='text_info'>
-//                               <h1>Петро Кирилл</h1>
-//                               <h2>25 янв. 2024</h2>
-//                         </div>
-//                         <a href=''>Перейти</a>
-//                     </div>
-//                           <div className='comm'>
-//                             <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
-//                           </div>
-
-//                     </div>
-//                 </Container>
-
-//                 <Container>
-//                     <div id='margin' className='wrapper'>
-//                     <div className='name_info'>
-//                         <img src={no_photo} alt="" width="45" height="45"/>
-//                         <div className='text_info'>
-//                               <h1>Горбатый калоед</h1>
-//                               <h2>25 янв. 2024</h2>
-//                         </div>
-//                         <a href=''>Перейти</a>
-//                     </div>
-//                           <div className='comm'>
-//                             <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
-//                           </div>
-
-//                     </div>
-//                 </Container>
-
-//                 <Container>
-//                     <div className='wrapper'>
-//                     <div className='name_info'>
-//                         <img src={no_photo} alt="" width="45" height="45"/>
-//                         <div className='text_info'>
-//                               <h1>Данька 4 в диаметре)</h1>
-//                               <h2>25 янв. 2024</h2>
-//                         </div>
-//                         <a href=''>Перейти</a>
-//                     </div>
-//                           <div className='comm'>
-//                             <p>Не налазит.</p>
-//                           </div>
-
-//                     </div>
-//                 </Container>
-
-//                 <Container>
-//                     <div className='wrapper'>
-//                     <div className='name_info'>
-//                         <img className='judje' src={judje} alt="" width="45" height="45"/>
-//                         <div className='text_info'>
-//                               <h1>Judje123</h1>
-//                               <h2>25 янв. 2024</h2>
-//                         </div>
-//                         <a href=''>Перейти</a>
-//                     </div>
-//                           <div className='comm'>
-//                             <p>СВежее мясо))</p>
-//                           </div>
-
-//                     </div>
-//                 </Container>
-
-//                 <Container>
-//                     <div id='margin1' className='wrapper'>
-//                     <div className='name_info'>
-//                         <img src={no_photo} alt="" width="45" height="45"/>
-//                         <div className='text_info'>
-//                               <h1>Suzuya Juzo</h1>
-//                               <h2>25 янв. 2024</h2>
-//                         </div>
-//                         <a href=''>Перейти</a>
-//                     </div>
-//                           <div className='comm'>
-//                             <p>Топ магазин! Чут чут получше Смешных Цен!!! 8/10 ммр</p>
-//                           </div>
-
-//                     </div>
-//                 </Container>
-
-//                 <Container>
-//                     <div className='wrapper'>
-//                     <div className='name_info'>
-//                         <img src={no_photo} alt="" width="45" height="45"/>
-//                         <div className='text_info'>
-//                               <h1>Advokat666</h1>
-//                               <h2>25 янв. 2024</h2>
-//                         </div>
-//                         <a href=''>Перейти</a>
-//                     </div>
-//                           <div className='comm'>
-//                             <p>После покупки лонгклиффа chxse the sun винрейт на сфе больше 50%!!! Наконец! Советую работягам</p>
-//                           </div>
-
-//                     </div>
-//                 </Container>
-//             </div>
-//         </Grid>
-        
-//       </div>
-
-//   )
-// }
 
 export default Main_Reviews
